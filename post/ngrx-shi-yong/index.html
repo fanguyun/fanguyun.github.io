@@ -1,0 +1,743 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>NgRx使用 | Jonfan Blog</title>
+
+<link rel="shortcut icon" href="https://fanguyun.github.io/favicon.ico?v=1756178626680">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fanguyun.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Jonfan Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1756178626680"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    NgRx使用
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-07-21 ·
+                    </time>
+                    
+                        <a href="https://fanguyun.github.io/tag/xp-qE3psyDd/" class="post-tags">
+                            # NGRX
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/6xU4bfZPU67/" class="post-tags">
+                            # ANGULAR
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/oFf0Uzxfvyw/" class="post-tags">
+                            # 状态管理
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/899l1JII0xX/" class="post-tags">
+                            # 数据流
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>NgRx是用于在Angular中构建反应式应用程序的框架。NgRx提供状态管理，副作用隔离，实体集合管理，路由器绑定，代码生成以及开发人员工具，这些工具可增强开发人员在构建许多不同类型的应用程序时的体验。</p>
+<!-- more -->
+<h3 id="为什么要使用ngrx进行状态管理">为什么要使用NgRx进行状态管理？</h3>
+<p>NgRx通过存储单个状态和使用操作来表达状态更改，从而提供了用于创建可维护的显式应用程序的状态管理。</p>
+<ul>
+<li>
+<p><strong>可序列化</strong><br>
+通过规范化状态变化并将其传递给可观察对象，NgRx提供了可序列化性，并确保状态可预测地存储。这样可以将状态保存到外部存储，例如localStorage。<br>
+此外，它还允许从Store Devtools检查，下载，上传和调度操作。</p>
+</li>
+<li>
+<p><strong>类型安全</strong><br>
+依靠TypeScript编译器来保证程序正确性，从而在整个体系结构中提高了类型安全性。</p>
+</li>
+<li>
+<p><strong>封装</strong><br>
+使用NgRx Effects和Store，可以将与外部资源副作用（例如网络请求，Web套接字和任何业务逻辑）的任何交互都与UI隔离。这种隔离允许使用更多纯净和简单的组件，并保持单一职责原则。</p>
+</li>
+<li>
+<p><strong>可测试的</strong><br>
+由于Store使用纯函数来更改状态和从状态中选择数据，并且能够将副作用与UI隔离，因此测试变得非常简单。NgRx还提供诸如provideMockStore和provideMockActions用于隔离测试的测试设置，并提供更好的测试体验。</p>
+</li>
+<li>
+<p><strong>性能</strong><br>
+存储建立在单个不变的数据状态上，使用OnPush策略使更改检测变成一项非常容易的任务。NgRx还由可记忆的选择器功能提供支持，这些选择器功能可优化状态查询计算。</p>
+</li>
+</ul>
+<h3 id="何时应使用ngrx进行状态管理">何时应使用NgRx进行状态管理</h3>
+<p>当管理服务中的状态不再足够时，在构建具有大量用户交互和多个数据源的应用程序时，可能会使用NgRx。<br>
+SHARI原则可以回答“我何时需要NgRx”这个问题：</p>
+<ul>
+<li>Shared：由许多组件和服务的访问的状态。</li>
+<li>Hydrated：从外部存储持久化。</li>
+<li>Available：状态，需要时可用重新进入路线。</li>
+<li>Retrieved：必须附带副作用的状态。</li>
+<li>Impacted：受其他来源的行动影响的状态。</li>
+</ul>
+<h3 id="ngrxstore">@ngrx/store</h3>
+<p>Store是受Redux启发的RxJS支持的Angular应用程序状态管理。 Store是一个受控状态容器，旨在帮助在Angular上编写高性能，一致的应用程序。</p>
+<h3 id="关键概念">关键概念</h3>
+<ul>
+<li>Actions: 动作描述从组件和服务调度的唯一事件</li>
+<li>State: 状态更改由称为简化器的纯函数处理，这些函数采用当前状态和最新操作来计算新状态。</li>
+<li>Selectors: 选择器是用于选择，导出和组成状态块的纯函数。</li>
+<li>State是通过Store访问的，状态是可观察的，行为是观察者。</li>
+</ul>
+<h3 id="状态流">状态流</h3>
+<p>下图表示NgRx中应用程序状态的总体一般流程：<br>
+<img src="https://fanguyun.github.io/post-images/1595323865715.png" alt="" loading="lazy"></p>
+<h3 id="安装">安装</h3>
+<pre><code>// use npm 
+npm install @ngrx/store --save
+// use yarn 
+yarn add @ngrx/store
+// use ng add
+ng add @ngrx/store
+</code></pre>
+<h3 id="示例">示例</h3>
+<p>以下教程向您展示如何管理计数器的状态，以及如何在Angular组件中选择和显示它:<br>
+1、创建一个名为counter.actions.ts的新文件，以描述递增，递减和重置其值的计数器动作。</p>
+<pre><code>// src/app/counter.actions.ts
+import { createAction } from '@ngrx/store';
+
+export const increment = createAction('[Counter Component] Increment');
+export const decrement = createAction('[Counter Component] Decrement');
+export const reset = createAction('[Counter Component] Reset');
+</code></pre>
+<p>2、根据提供的操作对reducer函数进行细化以处理计数器值的更改</p>
+<pre><code>// src/app/counter.reducer.ts
+import { createReducer, on } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+export const initialState = 0;
+
+const _counterReducer = createReducer(initialState,
+  on(increment, state =&gt; state + 1),
+  on(decrement, state =&gt; state - 1),
+  on(reset, state =&gt; 0),
+);
+
+export function counterReducer(state, action) {
+  return _counterReducer(state, action);
+}
+</code></pre>
+<p>3、从@ ngrx / store和counter.reducer文件导入StoreModule。</p>
+<pre><code>// src/app/app.module.ts (imports)
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+</code></pre>
+<p>4、在AppModule的imports数组中添加StoreModule.forRoot函数，其中包含一个对象，该对象包含计数和管理计数器状态的counterReducer。 StoreModule.forRoot（）方法注册在整个应用程序中访问商店所需的全局提供程序。</p>
+<pre><code>// src/app/app.module.ts (StoreModule)
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({ count: counterReducer })
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+</code></pre>
+<p>5、在app文件夹中创建一个名为my-counter的新组件。将存储服务注入到组件中以分派计数器动作，并使用select运算符从状态中选择数据。<br>
+使用按钮更新MyCounterComponent模板，以调用递增，递减和重置方法。使用异步管道订阅可观察的count。</p>
+<pre><code>// src/app/my-counter/my-counter.component.html
+&lt;button id=&quot;increment&quot; (click)=&quot;increment()&quot;&gt;Increment&lt;/button&gt;
+
+&lt;div&gt;Current Count: {{ count$ | async }}&lt;/div&gt;
+
+&lt;button id=&quot;decrement&quot; (click)=&quot;decrement()&quot;&gt;Decrement&lt;/button&gt;
+
+&lt;button id=&quot;reset&quot; (click)=&quot;reset()&quot;&gt;Reset Counter&lt;/button&gt;
+</code></pre>
+<p>使用用于计数的选择器和用于调度Increment，Decrement和Reset操作的方法更新MyCounterComponent类</p>
+<pre><code>// src/app/my-counter/my-counter.component.ts
+import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset } from '../counter.actions';
+
+@Component({
+  selector: 'app-my-counter',
+  templateUrl: './my-counter.component.html',
+  styleUrls: ['./my-counter.component.css'],
+})
+export class MyCounterComponent {
+  count$: Observable&lt;number&gt;;
+
+  constructor(private store: Store&lt;{ count: number }&gt;) {
+    this.count$ = store.pipe(select('count'));
+  }
+
+  increment() {
+    this.store.dispatch(increment());
+  }
+
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+
+  reset() {
+    this.store.dispatch(reset());
+  }
+}
+</code></pre>
+<p>6、将MyCounter组件添加到您的AppComponent模板中。</p>
+<pre><code>// src/app/app.component.html
+&lt;app-my-counter&gt;&lt;/app-my-counter&gt;
+</code></pre>
+<p>单击递增，递减和重置按钮以更改计数器的状态。</p>
+<p>让我们介绍一下您所做的事情：</p>
+<ul>
+<li>定义的事件表达动作。</li>
+<li>定义了一个reducer功能来管理计数器的状态。</li>
+<li>注册了整个应用程序中可用的全局状态容器。</li>
+<li>注入了存储服务以调度动作并选择计数器的当前状态。</li>
+<li></li>
+</ul>
+<h3 id="通过actions-reducers和selectors了解ngrx应用程序的体系结构">通过actions、reducers和selectors了解NgRx应用程序的体系结构</h3>
+<h4 id="actios">Actios</h4>
+<p>Actions是NgRx中的主要构建块之一。 Actions表示在整个应用程序中发生的独特事件。 从用户与页面的交互，通过网络请求的外部交互以及与设备API的直接交互，这些以及更多事件均通过actions进行了描述。<br>
+NgRx中的Action由一个简单的接口组成：</p>
+<pre><code>// Action Interface
+interface Action {
+  type: string;
+}
+</code></pre>
+<p>接口具有单个属性，即类型，表示为字符串。 type属性用于描述将在您的应用程序中分派的操作。 该类型的值以[Source] Event的形式出现，用于提供有关它是什么actions类别以及从哪里调度动作的上下文。 您向actions添加属性以为操作提供其他上下文或元数据。<br>
+让我们看一下启动登录请求的示例Action:</p>
+<pre><code>// login-page.actions.ts
+import { createAction, props } from '@ngrx/store';
+
+export const login = createAction(
+  '[Login Page] Login',
+  props&lt;{ username: string; password: string }&gt;()
+);
+</code></pre>
+<p>createAction函数返回一个函数，该函数在被调用时将以Action接口的形式返回一个对象。 props方法用于定义处理动作所需的任何其他元数据。<br>
+Action创建者提供了一种一致的，类型安全的方式来构造要分派的Action。<br>
+使用Action创建者在分派时返回Action。</p>
+<pre><code>// login-page.component.ts
+onSubmit(username: string, password: string) {
+  store.dispatch(login({ username: username, password: password }));
+}
+</code></pre>
+<p>login Action创建者将收到一个用户名和密码的对象，并返回一个普通的JavaScript对象，其类型属性为[Login Page] Login，并将用户名和密码作为附加属性。<br>
+返回的Action具有非常具体的上下文，关于操作来自何处以及发生了什么事件:</p>
+<ul>
+<li>操作的类别捕获在方括号[]中,该类别用于对特定区域的操作进行分组，无论是组件页面，后端API还是浏览器API。</li>
+<li>类别后的登录文本是有关此操作发生了什么事件的描述。在这种情况下，用户单击登录页面上的登录按钮以尝试使用用户名和密码进行身份验证。</li>
+</ul>
+<h4 id="reducers">Reducers</h4>
+<p>NgRx中的reducer负责处理应用程序中从一个状态到下一个状态的转换。 Reducer纯函数通过根据操作的类型确定要处理的操作来处理这些转换。<br>
+由Reducer管理的每个状态都有一些一致的部分：</p>
+<p>定义state形状的接口或类型<br>
+参数包括初始状态或当前状态以及当前操作<br>
+处理state更改的功能及其相关</p>
+<p>以下是一组处理记分板state的操作示例以及相关的reducer功能:<br>
+首先，定义一些与state交互的action。</p>
+<pre><code>// scoreboard-page.actions.ts
+import { createAction, props } from '@ngrx/store';
+
+export const homeScore = createAction('[Scoreboard Page] Home Score');
+export const awayScore = createAction('[Scoreboard Page] Away Score');
+export const resetScore = createAction('[Scoreboard Page] Score Reset');
+export const setScores = createAction('[Scoreboard Page] Set Scores', props&lt;{game: Game}&gt;());
+</code></pre>
+<p>接下来，创建一个reducer文件，该文件导入action并为state块定义形状。</p>
+<h5 id="1-定义state形状">1、定义state形状</h5>
+<p>每个reducer函数都是一个action监听器。上面定义的记分板action描述了reducer可能处理的过渡。导入多组操作以处理reducer中的其他状态转换。</p>
+<pre><code>// scoreboard.reducer.ts
+import { Action, createReducer, on } from '@ngrx/store';
+import * as ScoreboardPageActions from '../actions/scoreboard-page.actions';
+
+export interface State {
+  home: number;
+  away: number;
+}
+</code></pre>
+<h5 id="2设置初始state值">2.设置初始state值</h5>
+<p>初始状态为状态提供一个初始值，如果当前状态未定义，则提供一个值。 您将默认状态设置为所需状态属性的初始状态。</p>
+<p>创建并导出变量以捕获具有一个或多个默认值的初始状态。</p>
+<pre><code>// scoreboard.reducer.ts
+export const initialState: State = {
+  home: 0,
+  away: 0,
+};
+</code></pre>
+<h5 id="3创建recucer函数">3.创建recucer函数</h5>
+<p>reducer功能的职责是以不变的方式处理状态转换。创建一个reducer函数，该函数处理使用createReducer函数管理计分板state的action。</p>
+<pre><code>const scoreboardReducer = createReducer(
+  initialState,
+  on(ScoreboardPageActions.homeScore, state =&gt; ({ ...state, home: state.home + 1 })),
+  on(ScoreboardPageActions.awayScore, state =&gt; ({ ...state, away: state.away + 1 })),
+  on(ScoreboardPageActions.resetScore, state =&gt; ({ home: 0, away: 0 })),
+  on(ScoreboardPageActions.setScores, (state, { game }) =&gt; ({ home: game.home, away: game.away }))
+);
+
+export function reducer(state: State | undefined, action: Action) {
+  return scoreboardReducer(state, action);
+}
+</code></pre>
+<p>导出的reducer函数是必需的，因为AOT编译器不支持函数调用。</p>
+<h5 id="4-注册root-state">4、注册root state</h5>
+<p>应用程序的state被定义为一个大对象。注册reducer函数以管理部分state时，只会在对象中定义具有关联值的键。要在您的应用程序中注册全局store，请使用StoreModule.forRoot（）方法以及定义您的state的键/值对的映射。 StoreModule.forRoot（）注册应用程序的全局提供程序，包括您注入到组件和服务中的Store服务，以分派操作并选择状态</p>
+<pre><code>// app.module.ts
+
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({ game: fromScoreboard.reducer })
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>使用StoreModule.forRoot（）注册state可确保在应用程序启动时定义state。通常，您注册的root state始终需要立即对应用程序的所有区域可用。</p>
+<h5 id="6注册功能state">6.注册功能state</h5>
+<p>功能state的行为与root state相同，但是允许您在应用程序中使用特定功能区域定义它们。 您的root state是一个大对象，而功能state会在该对象中注册其他键和值。</p>
+<p>让我们从一个空的state对象开始。</p>
+<pre><code>import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({})
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>这会将您的应用程序注册为root state为空的对象。</p>
+<pre><code>{}
+</code></pre>
+<p>现在，将记分板reducer与名为ScoreboardModule的NgModule功能一起使用，以注册其他state</p>
+<pre><code>// scoreboard.reducer.ts
+export const scoreboardFeatureKey = 'game';
+
+
+// scoreboard.module.ts
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forFeature(fromScoreboard.scoreboardFeatureKey, fromScoreboard.reducer)
+  ],
+})
+export class ScoreboardModule {}
+</code></pre>
+<p>将ScoreboardModule添加到AppModule以加载state。</p>
+<pre><code>// app.module.ts
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { ScoreboardModule } from './scoreboard/scoreboard.module';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({}),
+    ScoreboardModule
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>一旦记分板模块被加载，game键就成为root state对象中的一个属性，并且现在处于state中进行管理</p>
+<pre><code>{
+  game: { home: 0, away: 0 }
+}
+</code></pre>
+<p>立即加载state还是延迟加载state取决于应用程序的需求。您可以使用功能state随着时间推移并通过不同的功能模块来构建state对象。</p>
+<h4 id="selectors">Selectors</h4>
+<p>Selectors是用于获取存储state切片的纯函数。 @ ngrx / store提供了一些帮助程序功能来优化此选择。选择state切片时，选择器提供许多功能:<br>
+可移植性 记忆化 组成 可测性 类型安全。<br>
+使用createSelector和createFeatureSelector函数时，@ ngrx / store会跟踪调用选择器函数的最新参数。 因为选择器是纯函数，所以当参数匹配时可以返回最后的结果，而无需重新调用选择器函数。 这可以提供性能优势，尤其是对于执行昂贵计算的选择器而言。 这种做法称为记忆。<br>
+对一个state使用选择器：</p>
+<pre><code>import { createSelector } from '@ngrx/store';
+
+export interface FeatureState {
+  counter: number;
+}
+
+export interface AppState {
+  feature: FeatureState;
+}
+
+export const selectFeature = (state: AppState) =&gt; state.feature;
+
+export const selectFeatureCount = createSelector(
+  selectFeature,
+  (state: FeatureState) =&gt; state.counter
+);
+</code></pre>
+<p>对多个状态使用选择器:<br>
+createSelector可用于基于同一状态的多个切片从状态中选择一些数据。<br>
+createSelector函数最多可以使用8个选择器函数，以进行更完整的状态选择。<br>
+例如，假设您在状态中有一个selectedUser对象。 您还具有book对象的allBooks数组。<br>
+您想显示当前用户的所有书籍。<br>
+您可以使用createSelector来实现。 即使您在allBooks中对其进行了更新，您的可见图书也将始终是最新的。 如果选择了一本，它们将始终显示属于您用户的图书，而当未选择任何用户时，它们将显示所有图书。<br>
+结果将只是状态的另一部分过滤掉您的某些状态。 而且它将永远是最新的。</p>
+<pre><code>import { createSelector } from '@ngrx/store';
+
+export interface User {
+  id: number;
+  name: string;
+}
+
+export interface Book {
+  id: number;
+  userId: number;
+  name: string;
+}
+
+export interface AppState {
+  selectedUser: User;
+  allBooks: Book[];
+}
+
+export const selectUser = (state: AppState) =&gt; state.selectedUser;
+export const selectAllBooks = (state: AppState) =&gt; state.allBooks;
+
+export const selectVisibleBooks = createSelector(
+  selectUser,
+  selectAllBooks,
+  (selectedUser: User, allBooks: Book[]) =&gt; {
+    if (selectedUser &amp;&amp; allBooks) {
+      return allBooks.filter((book: Book) =&gt; book.userId === selectedUser.id);
+    } else {
+      return allBooks;
+    }
+  }
+);
+</code></pre>
+<p>将选择器与props一起使用:<br>
+要根据store中不可用的数据选择state，可以将props传递给选择器功能。 这些props通过每个选择器和投影仪功能传递。 为此，我们必须在组件内部使用选择器时指定这些props。<br>
+例如，如果我们有一个计数器，并且想将其值相乘，则可以将相乘因子添加为prop：<br>
+选择器或投影仪的最后一个参数是props参数，在我们的示例中，它看起来如下:</p>
+<pre><code>export const getCount = createSelector(
+  getCounterValue,
+  (counter, props) =&gt; counter * props.multiply
+);
+</code></pre>
+<p>在组件内部，我们可以定义props：</p>
+<pre><code>ngOnInit() {
+  this.counter = this.store.pipe(select(fromRoot.getCount, { multiply: 2 }))
+}
+</code></pre>
+<p>以下是使用以ID区分的多个计数器的示例。</p>
+<pre><code>export const getCount = () =&gt;
+  createSelector(
+    (state, props) =&gt; state.counter[props.id],
+    (counter, props) =&gt; counter * props.multiply
+  );
+</code></pre>
+<p>组件的选择器现在正在调用工厂函数来创建不同的选择器实例：</p>
+<pre><code>ngOnInit() {
+  this.counter2 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter2', multiply: 2 }));
+  this.counter4 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter4', multiply: 4 }));
+  this.counter6 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter6', multiply: 6 }));
+}
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fanguyun.github.io/post/charles-an-zhuang-ji-dai-li-pei-zhi/" class="post-title gt-a-link">
+                    Charles安装及代理配置
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '94fca913faabe61337e0',
+    clientSecret: '9ee8a359f64b424f77e6fba28063b59788b92af1',
+    repo: 'fanguyun.github.io',
+    owner: 'fanguyun',
+    admin: ['fanguyun'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">⌨️ 格物、致知、诚意  🎉<br/>
+⌨️ 正心、修身、齐家  🎉</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Jonfan & Grider  🖥
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fanguyun.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

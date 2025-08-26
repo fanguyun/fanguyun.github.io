@@ -1,0 +1,548 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>前端基于SSH的自动部署 | Jonfan Blog</title>
+
+<link rel="shortcut icon" href="https://fanguyun.github.io/favicon.ico?v=1756178626680">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fanguyun.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Jonfan Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1756178626680"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    前端基于SSH的自动部署
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2019-07-18 ·
+                    </time>
+                    
+                        <a href="https://fanguyun.github.io/tag/9viLSJBp_/" class="post-tags">
+                            # SSH
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/qVOQexVL_Q/" class="post-tags">
+                            # 持续集成
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/amI4cgC9h/" class="post-tags">
+                            # Git
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>SSH是一种网络协议，用于计算机之间的加密登录。</p>
+<!-- more -->
+<h3 id="ssh简介">ssh简介</h3>
+<p>原理：</p>
+<ul>
+<li>远程主机收到用户的登录请求，把自己的公钥发给用户。</li>
+<li>用户使用这个公钥，将登录密码加密后，发送回来。</li>
+<li>远程主机用自己的私钥，解密登录密码，如果密码正确，就同意用户登录。</li>
+</ul>
+<p>当远程主机的公钥被接受以后，它就会被保存在本地文件~/.ssh/known_hosts之中，此外系统也有一个这样的文件，通常是/etc/ssh/ssh_known_hosts，保存一些对所有用户都可信赖的远程主机的公钥。</p>
+<h3 id="常用指令">常用指令</h3>
+<ul>
+<li>本地登录服务器 ssh user@remote -p port，端口是22的话ssh user@remote，退出登录exit</li>
+<li>本地免密码登录 ssh-copy-id user@remote -p port，这在写脚本服务器控制时特别有用</li>
+<li>给服务器配置别名 code ~/.ssh/config追加一些内容，就可以ssh selfname登录，不再需要记服务器ip地址了</li>
+<li>执行命令ssh selfname &quot;cd ~;ls&quot;，将会在服务器上执行引号里的命令，执行之后其自动关闭远程服务</li>
+<li>将a电脑文件(夹)复制到b电脑上哪个文件夹下面：scp username@a电脑ip:文件路径 username@b电脑ip:文件夹路径，是文件夹的话加上-r，这里也可以用别名，通常本机的话省略username@a电脑ip:</li>
+</ul>
+<pre><code>ssh user@remote -p port
+
+# user 是你在远程机器上的用户名，如果不指定的话默认为当前用户
+# remote 是远程机器的地址，可以是 IP，域名，或者是后面会提到的别名
+# port 是 SSH Server 监听的端口，如果不指定的话就为默认值 22
+# 比如我常用的 ssh zhm@120.79.52.223
+
+</code></pre>
+<p>通常在本地电脑输入以上命令之后，远程服务器就会询问密码，你输入的时候是看不见任何波动，输入完回车就可以了~，如果报错ssh: connect to host remote port 22: Connection refused，说明服务器没有按照ssh server，Ubantu Desktop系统默认是没有这个的，安装命令sudo apt-get install openssh-server</p>
+<h3 id="免密登录">免密登录</h3>
+<p>每次 ssh 都要输入密码是不是很烦呢？与密码验证相对的，是公钥验证。也就是说，要实现免密码登入，首先要设置 SSH 钥匙。也就是本地电脑生成公钥私钥，然后把公钥放在远程服务器上就可以了！<br>
+原理很简单，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。</p>
+<pre><code># 查看本地有没有
+ls ~/.ssh
+# 没有就生成
+ssh-keygen
+# 在~/.ssh/目录下，会新生成两个文件：id_rsa.pub和id_rsa。前者是你的公钥，后者是你的私钥。
+# 把公钥放到远程服务器
+ssh-copy-id user@remote -p port
+# 比如我的 ssh-copy-id zhm@120.79.52.223
+
+</code></pre>
+<p>ssh-copy-id基本都安装了，万一没有，mac上brew install ssh-copy-id。<br>
+windows麻烦点ssh user@remote -p port 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pub，意思是在远端执行新建 .ssh 文件夹，并把本地的 ~/.ssh/id_rsa.pub （也就是公钥）追加到远端的 .ssh/authorized_keys 中。当然，不使用这条命令的话，你也可以手动操作这个过程，即先复制公钥，再登入远程机器，粘贴到 .ssh/authorized_keys 当中。</p>
+<h3 id="配置别名">配置别名</h3>
+<p>每次都输入 ssh user@remote -p port，时间久了也会觉得很麻烦，特别是当 user, remote 和 port 都得输入，而且还不好记忆的时候。配置别名可以让我们进一步偷懒。比如我想用ssh lab替换上面一串</p>
+<pre><code># cat&gt;&gt;某文件&lt;&lt;EOF追加下内容， &gt;&gt; 追加的意思 &lt;&lt;EOF 遇到EOF终止
+# 因为是前端，直接用vscode编辑
+code ~/.ssh/config
+# 追加以下内容，保存
+Host lab
+    HostName remote
+    User user
+    Port port
+
+# 来登录吧
+ssh lab
+
+# 比如我的
+# Host han
+    # HostName 120.79.52.223
+    # User zhm
+    # Port 22
+# ssh han
+</code></pre>
+<h3 id="命令行执行登录并且在目标服务器上执行命令">命令行执行登录并且在目标服务器上执行命令</h3>
+<p>命令行执行登录并且在目标服务器上执行命令:</p>
+<pre><code># 单引号或者双引号，将命令包起来，然后分号隔开命令
+ssh user@remoteNode &quot;cd /home ; ls&quot;
+</code></pre>
+<p>如果是很多命令的话，需要建一个脚本。</p>
+<pre><code># 建一个脚本文件test.sh，里面写上这个，然后执行 sh test.sh
+#!/bin/bash  
+# 远程执行的内容在&quot;&lt; &lt; remotessh &quot; 至&quot; remotessh &quot;之间，如果不想本机出现日志的话 ssh user@remoteNode &gt;/dev/null 2&gt;&amp;1   &lt;&lt; remotessh
+ssh user@remoteNode &lt;&lt; remotessh
+ls
+exit
+remotessh
+</code></pre>
+<h3 id="传输文件">传输文件</h3>
+<p>两台机器间文件传输可以用scp，它的地址格式与 ssh 基本相同，都是可以省略用户名和端口，稍微的差别在与指定端口时用的是大写的 -P 而不是小写的。不过，如果你已经配置了别名，那么这都不重要，因为 scp 也支持直接用别名</p>
+<pre><code># 总的：本机的可以省略电脑的ip，默认的远程当前文件夹是 Home目录（~），将A电脑上的文件复制到B电脑上
+# 注意的地方：A若是文件，B电脑若也是文件的路径，不管文件存不存在，都会将A文件内容写入到B这个文件。
+#                    B电脑若是文件夹，不管文件夹存不存在，都会在这个文件夹下生成A电脑同名的文件和内容，有的话则会覆盖同名文件
+# A若是文件夹，加上-r，B电脑若是文件的路径会报错，B电脑若是文件夹路径，文件夹不存在的话则会建立这个文件夹且放入A文件夹里面的内容（相当于将A文件夹挪过去然后重命名），文件夹存在的话，会在这个文件夹下面生成一个和A同名的文件夹，里面内容一致
+scp A电脑:文件路径 B电脑:文件路径
+
+# 把本地的 /path/to/local/file 文件传输到远程的 /path/to/remote/file  
+scp -P port /path/to/local/file user@remote:/path/to/remote/file
+
+# 也可以使用别名
+scp /path/to/local/file lab:/path/to/remote/file
+
+# 把远程的 /path/to/remote/file 下载到本地的 /path/to/local/file
+scp lab:/path/to/remote/file /path/to/local/file
+
+# 远程的默认路径是家目录
+# 下面命令把当前目录下的 file 传到远程的 ~/dir/file
+scp file lab:dir/file
+
+# 加上 -r 命令可以传送文件夹
+# 下面命令可以把当前目录下的 dir 文件夹传到远程的家目录下
+scp -r dir lab:
+
+# 别忘了 . 可以用来指代当前目录
+# 下面命令可以把远程的 ~/dir 目录下载到当前目录里面
+scp -r lab:dir/ .
+</code></pre>
+<p>如果觉得使用命令行传输文件浑身不自在，你还可以使用 SFTP 协议。任何支持 SFTP 协议的客户端都能用你的 SSH 账号信息登入并管理文件，比如开源的有图形化界面的FTP客户端 FileZilla。别忘了，在这些客户端里面，你也可以指定你的私钥（~/.ssh/id_rsa），然后就能做到无密码登入了。</p>
+<h3 id="保持程序在后台运行">保持程序在后台运行</h3>
+<p>以下命令均在服务器执行</p>
+<h4 id="nohup">nohup</h4>
+<pre><code># 让程序在后台运行 比如 nohup node index.js &amp;
+nohup 一直执行的命令 &amp;
+# 看下任务号 node的那个
+ps
+# 如果需要终止的话
+kill 21455
+</code></pre>
+<h4 id="tmux">tmux</h4>
+<p>tmux更能执行复杂的程序，tmux还能管理多个窗口，窗口切分，复制粘贴等等，mac用户使用tmux更方便，新建会话tmux -CC，恢复的时候tmux -CC attach</p>
+<pre><code># 服务器上安装tmux
+sudo apt-get install tmux
+
+# 运行tmux，进入会话，此时运行任何东西都不会因为退出ssh而被杀死
+tmux
+
+# 暂时离开会话 ctrl+b 再按下d
+
+# 恢复会话
+# tmux attach
+
+# tmux命令必须运行在服务器上
+</code></pre>
+<p>以上内容来自<a href="https://juejin.im/post/5ce4a082e51d4577583ddc24">ssh免密登录服务器和scp的使用</a></p>
+<h3 id="基于rsync的部署">基于rsync的部署</h3>
+<p>参考<a href="https://segmentfault.com/a/1190000015669114">rsync 的使用方法</a></p>
+<h3 id="scp和rsync的区别">scp和rsync的区别</h3>
+<h4 id="scp命令">scp命令</h4>
+<p>1.scp 是 secure copy 的缩写，用于远程的文件的复制。</p>
+<p>2.参数：</p>
+<pre><code>-r： 递归复制整个目录。
+</code></pre>
+<p>3.实例：</p>
+<pre><code>scp /home/space/music/1.mp3 username@ip/home/root/others/music     
+scp /home/space/music/1.mp3 username@ip/home/root/others/music/001.mp3
+</code></pre>
+<p>如果是远程复制目录就加上 -r 参数 即可（重命名目录，就直接在命令后面添加，前提保证目标地址没有该目录）</p>
+<pre><code>scp -r /home/space/music/ username@ip:/home/root/others/music_new
+</code></pre>
+<p>把本地music目录复制到另一台服务器的others下，并重命名为music_new</p>
+<h4 id="rsync">rsync</h4>
+<p>1.rsync 是 remote sync 的缩写，用于linux系统下的数据镜像备份工具，远程服务器之间的文件拷贝。<br>
+2.参数：</p>
+<pre><code>-a, --archive 归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD。
+-v, --verbose 详细模式输出。
+-z, --compress 对备份的文件在传输时进行压缩处理。
+-P, --partial 保留那些因故没有完全传输的文件，以是加快随后的再次传输。
+</code></pre>
+<p>3.实例：</p>
+<pre><code>rsync -avp mylog /home/
+</code></pre>
+<p>scp是相当于复制，黏贴，如果有的话是覆盖，比较耗时间，不智能。</p>
+<p>rsync是复制，如果有重复的文件，会直接跳过，而且他自己的算法优化。</p>
+<p>scp是把文件全部复制过去，当文件修改后还是把所有文件复制过去，rsync 第一次是把所有文件同步过去，当文件修改后，只把修改的文件同步过去。</p>
+<h3 id="前端基于scp或rsync的自动部署">前端基于scp或rsync的自动部署</h3>
+<p>1、基于scp,新增部署脚本文件，如deploy.sh</p>
+<pre><code># 压缩文件，其中 dist为要上传的文件所在目录
+echo 压缩部署包！
+tar -zcvf dist.tar.gz dist/
+
+# 上传到服务器（需要输入密码，如果已经进行过私钥配置，则不用），其中/home/savoygu/gusaifei 为上传文件所在目录
+echo 上传文件
+scp -r dist.tar.gz 账号@服务器ip:服务器上传路径
+
+# 登录到服务器（需要输入密码，如果已经进行过私钥配置，则不用）
+# 服务器环境开启
+ssh 账号@服务器ip -tt &lt;&lt; EOF
+
+# 进入目标目录
+cd 服务器上传路径
+# 解压
+sudo tar -zxvf dist.tar.gz --strip-components 1
+# 移除线上压缩文件
+sudo rm -rf
+
+exit
+EOF
+# 服务器环境结束
+echo 上传完成！
+
+# 移除本地压缩文件
+echo 删除本地压缩包！
+rm -rf dist.tar.gz
+</code></pre>
+<p>使用rsync同理</p>
+<p>2、前端使用脚本</p>
+<pre><code>  &quot;scripts&quot;: {
+    &quot;deploy&quot;: &quot;cross-env NODE_ENV=production umi build &amp;&amp; ./deploy.sh&quot;
+  }
+</code></pre>
+<p>可结合gitlabCI，Travis CI实现持续集成，参考</p>
+<ul>
+<li><a href="https://juejin.im/post/5cb693b66fb9a0687a1719d3">持续集成服务 gitlabCI教程</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html">持续集成服务 Travis CI教程</a></li>
+</ul>
+<h3 id="错误处理">错误处理</h3>
+<p>1、权限问题</p>
+<pre><code>.ssh目录，以及/home/当前用户 需要700权限，参考以下操作调整
+sudo chmod 700 ~/.ssh
+sudo chmod 700 /home/当前用户
+.ssh目录下的authorized_keys文件需要600或644权限，参考以下操作调整
+sudo chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+<p>2、StrictModes问题</p>
+<pre><code>编辑
+sudo vi /etc/ssh/sshd_config
+找到
+#StrictModes yes
+改成
+StrictModes no
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fanguyun.github.io/post/shi-yong-commitizen-de-zheng-que-zi-shi/" class="post-title gt-a-link">
+                    使用commitizen的正确姿势 
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '94fca913faabe61337e0',
+    clientSecret: '9ee8a359f64b424f77e6fba28063b59788b92af1',
+    repo: 'fanguyun.github.io',
+    owner: 'fanguyun',
+    admin: ['fanguyun'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">⌨️ 格物、致知、诚意  🎉<br/>
+⌨️ 正心、修身、齐家  🎉</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Jonfan & Grider  🖥
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fanguyun.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

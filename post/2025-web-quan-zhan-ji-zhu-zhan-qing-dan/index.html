@@ -1,0 +1,442 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>2025 Web 全栈技术栈清单 | Jonfan Blog</title>
+
+<link rel="shortcut icon" href="https://fanguyun.github.io/favicon.ico?v=1756178626680">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fanguyun.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Jonfan Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1756178626680"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    2025 Web 全栈技术栈清单
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2025-08-26 ·
+                    </time>
+                    
+                        <a href="https://fanguyun.github.io/tag/6Um5wZCwk-/" class="post-tags">
+                            # 2025
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/vZyXy4b9M5B/" class="post-tags">
+                            # 全栈
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/qauimayxpnx/" class="post-tags">
+                            # WEB
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/cqxfWrXpvL/" class="post-tags">
+                            # Node
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h3 id="一-运行时环境">一、运行时环境</h3>
+<ul>
+<li>Node.js：最成熟稳定的 JavaScript 运行时，生态系统最完整</li>
+<li>Bun：启动速度快 4 倍，内置 TypeScript、打包器和测试框架，适合新项目尝试</li>
+</ul>
+<h3 id="二-后端框架">二、后端框架</h3>
+<ul>
+<li>Hono：纯 JavaScript 框架中性能最快（402K ops/秒），专为边缘计算优化，仅 7.4KB</li>
+<li>NestJS：企业级架构设计，适合大型团队需要严格代码组织的项目</li>
+</ul>
+<h3 id="三-数据库">三、数据库</h3>
+<ul>
+<li>PostgreSQL：Stack Overflow 2024 最受欢迎数据库，功能最全面的开源关系型数据库</li>
+<li>Drizzle ORM：TypeScript 优先设计，无服务器环境性能比 Prisma 快 3 倍，无二进制依赖</li>
+<li>Supabase：开源 Firebase 替代品，提供数据库、认证、存储一站式 BaaS 服务</li>
+<li>Neon：革命性的 PostgreSQL 托管服务，支持缩放到零和即时分支，成本节省</li>
+</ul>
+<h3 id="四-前端框架">四、前端框架</h3>
+<ul>
+<li>React：最大的生态系统和社区支持，组件复用性最佳</li>
+<li>Next.js：React 全栈框架标准，内置 SSR/SSG/ISR，最佳 SEO 支持</li>
+</ul>
+<h3 id="五-构建工具">五、构建工具</h3>
+<ul>
+<li>Vite：开发服务器启动最快，HMR 仅需 35ms，78% 开发者使用率</li>
+<li>Turbopack：Next.js 专用，Rust 编写的下一代打包器，仅限 Next.js 生态</li>
+</ul>
+<h3 id="六-状态管理">六、状态管理</h3>
+<ul>
+<li>TanStack Query：服务器状态管理标准，每周 2000 万次下载，自动缓存和同步</li>
+<li>Zustand：仅 3KB 的客户端状态库，学习曲线最低，比 Redux 快 2 - 3 倍</li>
+<li>Jotai：原子化状态管理，适合需要细粒度响应式更新的复杂应用</li>
+</ul>
+<h3 id="七-代码质量工具">七、代码质量工具</h3>
+<ul>
+<li>Biome：比 ESLint 快 30 - 50 倍的 linter 和 formatter，单一配置文件</li>
+<li>ESLint：JavaScript 生态最成熟的 linter，规则最全面，插件丰富</li>
+<li>Prettier：代码格式化标准，零配置，支持多种语言</li>
+<li>Husky：Git hooks 管理，确保提交前代码质量检查</li>
+</ul>
+<h3 id="八-ai-开发工具">八、AI 开发工具</h3>
+<ul>
+<li>Claude Code：AI 编程史上最强，无需多言</li>
+<li>Cursor：AI 代码编辑器新秀，多模型支持，上下文理解最强</li>
+<li>GitHub Copilot：最成熟的 AI 编程助手，与 GitHub 生态深度集成</li>
+<li>v0.dev：Vercel 的 AI UI 生成工具，从描述生成 React 组件</li>
+</ul>
+<h3 id="九-容器化与编排">九、容器化与编排</h3>
+<ul>
+<li>Docker：容器化标准，确保开发和生产环境一致性</li>
+<li>Docker Compose：多容器应用编排，本地开发环境管理最简单</li>
+</ul>
+<h3 id="十-api-开发">十、API 开发</h3>
+<ul>
+<li>tRPC：TypeScript 全栈类型安全，前后端共享类型定义</li>
+<li>GraphQL + Apollo：灵活的数据查询，减少过度获取，适合复杂数据需求</li>
+<li>Swagger/OpenAPI：API 文档标准，自动生成交互式文档</li>
+</ul>
+<h3 id="十一-邮件服务">十一、邮件服务</h3>
+<ul>
+<li>Resend：开发者友好的邮件 API，React Email 模板支持</li>
+<li>SendGrid：最可靠的事务邮件服务，送达率最高</li>
+<li>Postmark：专注事务邮件，速度最快，平均送达时间 &lt; 10 秒</li>
+</ul>
+<h3 id="十二-搜索服务">十二、搜索服务</h3>
+<ul>
+<li>Algolia：即时搜索体验最佳，延迟 &lt; 50ms，开箱即用</li>
+<li>Meilisearch：开源搜索引擎，易于部署，适合中小规模应用</li>
+<li>Elasticsearch：功能最强大的搜索引擎，适合复杂搜索需求</li>
+</ul>
+<h3 id="十三-性能优化">十三、性能优化</h3>
+<ul>
+<li>Partytown：Web Worker 中运行第三方脚本，主线程零阻塞</li>
+<li>Million.js：React 性能优化编译器，自动优化渲染，性能提升 70%</li>
+<li>Qwik：可恢复性框架，0KB JavaScript 初始加载，TTI 最快</li>
+</ul>
+<h3 id="十四-ui-组件库">十四、UI 组件库</h3>
+<ul>
+<li>Tailwind CSS：原子化 CSS 框架，构建速度快，生产包体积小</li>
+<li>shadcn/ui：无运行时依赖的组件库，完全可定制，源代码直接复制使用</li>
+<li>Lucide React：最全面的开源图标库，tree - shaking 友好，1000 + 精心设计的图标</li>
+<li>Magic UI：现代动画组件库，提供高质量的交互效果和动画</li>
+<li>Aceternity UI：专注于现代设计趋势的高级动画组件库</li>
+</ul>
+<h3 id="十五-支付集成">十五、支付集成</h3>
+<ul>
+<li>Stripe：最强大灵活的支付 API，支持全球支付方式，开发者文档最佳</li>
+<li>LemonSqueezy：数字产品销售最简单方案，内置税务合规和营销工具</li>
+<li>Paddle：商户记录服务，处理全球税务，适合 SaaS 订阅业务</li>
+</ul>
+<h3 id="十六-ai-集成">十六、AI 集成</h3>
+<ul>
+<li>OpenAI API：最成熟的 LLM 服务，GPT - 4o 性价比最高</li>
+<li>Anthropic Claude：最强的推理能力，200K 上下文窗口，适合复杂任务</li>
+<li>Google Gemini：成本最低（Flash 模型），1M token 上下文，适合大规模处理</li>
+<li>Supabase pgvector：PostgreSQL 向量扩展，与现有数据库无缝集成，免费使用</li>
+</ul>
+<h3 id="十七-国际化i18n">十七、国际化(i18n)</h3>
+<ul>
+<li>next - intl：Next.js App Router 最佳方案，TypeScript 类型安全，服务端渲染支持</li>
+<li>react - i18next：功能最丰富的 React 国际化库，插件生态系统完整</li>
+<li>Crowdin：翻译管理平台，700 + 集成，AI 辅助翻译功能</li>
+</ul>
+<h3 id="十八-实时通信">十八、实时通信</h3>
+<ul>
+<li>Socket.IO：WebSocket 库事实标准，自动重连和房间管理，兼容性最佳</li>
+<li>Ably：托管实时消息服务，99.999% 可用性保证，全球 &lt; 50ms 延迟</li>
+<li>LiveKit：开源 WebRTC SFU，视频会议最佳选择，$0.18/GB 成本效益高</li>
+<li>Pusher：最简单的实时通信集成，5 分钟快速上手</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fanguyun.github.io/post/du-shu-bi-ji-ruan-ji-neng-dai-ma-zhi-wai-de-sheng-cun-zhi-nan/" class="post-title gt-a-link">
+                    【读书笔记】软技能-代码之外的生存指南
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '94fca913faabe61337e0',
+    clientSecret: '9ee8a359f64b424f77e6fba28063b59788b92af1',
+    repo: 'fanguyun.github.io',
+    owner: 'fanguyun',
+    admin: ['fanguyun'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">⌨️ 格物、致知、诚意  🎉<br/>
+⌨️ 正心、修身、齐家  🎉</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Jonfan & Grider  🖥
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fanguyun.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

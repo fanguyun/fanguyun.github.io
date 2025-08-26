@@ -1,0 +1,1932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fanguyun.github.io</id>
+    <title>Jonfan Blog</title>
+    <updated>2025-08-26T03:23:49.425Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fanguyun.github.io"/>
+    <link rel="self" href="https://fanguyun.github.io/atom.xml"/>
+    <subtitle>⌨️ 格物、致知、诚意  🎉&lt;br/&gt;
+⌨️ 正心、修身、齐家  🎉</subtitle>
+    <logo>https://fanguyun.github.io/images/avatar.png</logo>
+    <icon>https://fanguyun.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, Jonfan Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[2025 Web 全栈技术栈清单]]></title>
+        <id>https://fanguyun.github.io/post/2025-web-quan-zhan-ji-zhu-zhan-qing-dan/</id>
+        <link href="https://fanguyun.github.io/post/2025-web-quan-zhan-ji-zhu-zhan-qing-dan/">
+        </link>
+        <updated>2025-08-26T03:20:07.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="一-运行时环境">一、运行时环境</h3>
+<ul>
+<li>Node.js：最成熟稳定的 JavaScript 运行时，生态系统最完整</li>
+<li>Bun：启动速度快 4 倍，内置 TypeScript、打包器和测试框架，适合新项目尝试</li>
+</ul>
+<h3 id="二-后端框架">二、后端框架</h3>
+<ul>
+<li>Hono：纯 JavaScript 框架中性能最快（402K ops/秒），专为边缘计算优化，仅 7.4KB</li>
+<li>NestJS：企业级架构设计，适合大型团队需要严格代码组织的项目</li>
+</ul>
+<h3 id="三-数据库">三、数据库</h3>
+<ul>
+<li>PostgreSQL：Stack Overflow 2024 最受欢迎数据库，功能最全面的开源关系型数据库</li>
+<li>Drizzle ORM：TypeScript 优先设计，无服务器环境性能比 Prisma 快 3 倍，无二进制依赖</li>
+<li>Supabase：开源 Firebase 替代品，提供数据库、认证、存储一站式 BaaS 服务</li>
+<li>Neon：革命性的 PostgreSQL 托管服务，支持缩放到零和即时分支，成本节省</li>
+</ul>
+<h3 id="四-前端框架">四、前端框架</h3>
+<ul>
+<li>React：最大的生态系统和社区支持，组件复用性最佳</li>
+<li>Next.js：React 全栈框架标准，内置 SSR/SSG/ISR，最佳 SEO 支持</li>
+</ul>
+<h3 id="五-构建工具">五、构建工具</h3>
+<ul>
+<li>Vite：开发服务器启动最快，HMR 仅需 35ms，78% 开发者使用率</li>
+<li>Turbopack：Next.js 专用，Rust 编写的下一代打包器，仅限 Next.js 生态</li>
+</ul>
+<h3 id="六-状态管理">六、状态管理</h3>
+<ul>
+<li>TanStack Query：服务器状态管理标准，每周 2000 万次下载，自动缓存和同步</li>
+<li>Zustand：仅 3KB 的客户端状态库，学习曲线最低，比 Redux 快 2 - 3 倍</li>
+<li>Jotai：原子化状态管理，适合需要细粒度响应式更新的复杂应用</li>
+</ul>
+<h3 id="七-代码质量工具">七、代码质量工具</h3>
+<ul>
+<li>Biome：比 ESLint 快 30 - 50 倍的 linter 和 formatter，单一配置文件</li>
+<li>ESLint：JavaScript 生态最成熟的 linter，规则最全面，插件丰富</li>
+<li>Prettier：代码格式化标准，零配置，支持多种语言</li>
+<li>Husky：Git hooks 管理，确保提交前代码质量检查</li>
+</ul>
+<h3 id="八-ai-开发工具">八、AI 开发工具</h3>
+<ul>
+<li>Claude Code：AI 编程史上最强，无需多言</li>
+<li>Cursor：AI 代码编辑器新秀，多模型支持，上下文理解最强</li>
+<li>GitHub Copilot：最成熟的 AI 编程助手，与 GitHub 生态深度集成</li>
+<li>v0.dev：Vercel 的 AI UI 生成工具，从描述生成 React 组件</li>
+</ul>
+<h3 id="九-容器化与编排">九、容器化与编排</h3>
+<ul>
+<li>Docker：容器化标准，确保开发和生产环境一致性</li>
+<li>Docker Compose：多容器应用编排，本地开发环境管理最简单</li>
+</ul>
+<h3 id="十-api-开发">十、API 开发</h3>
+<ul>
+<li>tRPC：TypeScript 全栈类型安全，前后端共享类型定义</li>
+<li>GraphQL + Apollo：灵活的数据查询，减少过度获取，适合复杂数据需求</li>
+<li>Swagger/OpenAPI：API 文档标准，自动生成交互式文档</li>
+</ul>
+<h3 id="十一-邮件服务">十一、邮件服务</h3>
+<ul>
+<li>Resend：开发者友好的邮件 API，React Email 模板支持</li>
+<li>SendGrid：最可靠的事务邮件服务，送达率最高</li>
+<li>Postmark：专注事务邮件，速度最快，平均送达时间 &lt; 10 秒</li>
+</ul>
+<h3 id="十二-搜索服务">十二、搜索服务</h3>
+<ul>
+<li>Algolia：即时搜索体验最佳，延迟 &lt; 50ms，开箱即用</li>
+<li>Meilisearch：开源搜索引擎，易于部署，适合中小规模应用</li>
+<li>Elasticsearch：功能最强大的搜索引擎，适合复杂搜索需求</li>
+</ul>
+<h3 id="十三-性能优化">十三、性能优化</h3>
+<ul>
+<li>Partytown：Web Worker 中运行第三方脚本，主线程零阻塞</li>
+<li>Million.js：React 性能优化编译器，自动优化渲染，性能提升 70%</li>
+<li>Qwik：可恢复性框架，0KB JavaScript 初始加载，TTI 最快</li>
+</ul>
+<h3 id="十四-ui-组件库">十四、UI 组件库</h3>
+<ul>
+<li>Tailwind CSS：原子化 CSS 框架，构建速度快，生产包体积小</li>
+<li>shadcn/ui：无运行时依赖的组件库，完全可定制，源代码直接复制使用</li>
+<li>Lucide React：最全面的开源图标库，tree - shaking 友好，1000 + 精心设计的图标</li>
+<li>Magic UI：现代动画组件库，提供高质量的交互效果和动画</li>
+<li>Aceternity UI：专注于现代设计趋势的高级动画组件库</li>
+</ul>
+<h3 id="十五-支付集成">十五、支付集成</h3>
+<ul>
+<li>Stripe：最强大灵活的支付 API，支持全球支付方式，开发者文档最佳</li>
+<li>LemonSqueezy：数字产品销售最简单方案，内置税务合规和营销工具</li>
+<li>Paddle：商户记录服务，处理全球税务，适合 SaaS 订阅业务</li>
+</ul>
+<h3 id="十六-ai-集成">十六、AI 集成</h3>
+<ul>
+<li>OpenAI API：最成熟的 LLM 服务，GPT - 4o 性价比最高</li>
+<li>Anthropic Claude：最强的推理能力，200K 上下文窗口，适合复杂任务</li>
+<li>Google Gemini：成本最低（Flash 模型），1M token 上下文，适合大规模处理</li>
+<li>Supabase pgvector：PostgreSQL 向量扩展，与现有数据库无缝集成，免费使用</li>
+</ul>
+<h3 id="十七-国际化i18n">十七、国际化(i18n)</h3>
+<ul>
+<li>next - intl：Next.js App Router 最佳方案，TypeScript 类型安全，服务端渲染支持</li>
+<li>react - i18next：功能最丰富的 React 国际化库，插件生态系统完整</li>
+<li>Crowdin：翻译管理平台，700 + 集成，AI 辅助翻译功能</li>
+</ul>
+<h3 id="十八-实时通信">十八、实时通信</h3>
+<ul>
+<li>Socket.IO：WebSocket 库事实标准，自动重连和房间管理，兼容性最佳</li>
+<li>Ably：托管实时消息服务，99.999% 可用性保证，全球 &lt; 50ms 延迟</li>
+<li>LiveKit：开源 WebRTC SFU，视频会议最佳选择，$0.18/GB 成本效益高</li>
+<li>Pusher：最简单的实时通信集成，5 分钟快速上手</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【读书笔记】软技能-代码之外的生存指南]]></title>
+        <id>https://fanguyun.github.io/post/du-shu-bi-ji-ruan-ji-neng-dai-ma-zhi-wai-de-sheng-cun-zhi-nan/</id>
+        <link href="https://fanguyun.github.io/post/du-shu-bi-ji-ruan-ji-neng-dai-ma-zhi-wai-de-sheng-cun-zhi-nan/">
+        </link>
+        <updated>2021-02-24T02:59:50.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="关于本书">关于本书</h2>
+<p>书名：软技能<br>
+作者：John Sonmez<br>
+出版社：人民邮电出版社<br>
+阅读日期： 2016年07月<br>
+豆瓣评分：8.9<br>
+我的评分：☆☆☆☆</p>
+<h2 id="内容简介">内容简介</h2>
+<p>这是一本真正从“人”（而非技术也非管理）的角度关注软件开发人员自身发展的书。书中论述的内容既涉及生活习惯，又包括思维方式，凸显技术中“人”的因素，全面讲解软件行业从业人员所需知道的所有“软技能”。本书聚焦于软件开发人员生活的方方面面，从揭秘面试的流程到精耕细作出一份杀手级简历，从创建大受欢迎的博客到打造你，从提高自己工作效率到与如何与“拖延症”做斗争，甚至包括如何投资不动产，如何关注自己的健康。本书共分为职业篇、自我营销篇、学习篇、生产力篇、理财篇、健身篇、精神篇等七篇，概括了软件行业从业人员所需的“软技能”。通过阅读本书，软件工程人员、编程人员和其他技术人员能够积极思考自己的职业生涯，丰富自己的生活，让自己更接近成功。</p>
+<h2 id="作者简介">作者简介</h2>
+<p>John Z. Sonmez是“Simple Programmer”网站的创始人，他不辞辛劳地追求着“将复杂问题转化为简单解决方案”的梦想。他为在线培训机构Pluralsight开发了50多门在线课程，涉及iOS、Android、.NET、Java和游戏开发等多个主题。<br>
+他是“Get Up and CODE”播客的主持人，在这里他讨论程序员健身；他还是“Entreprogrammers”播客的主持人，在这里他和其他三位开发者/企业家分享他们构建在线业务的真实故事。<br>
+John是软件开发人员的人生导师，他帮助软件工程师、程序员和其他专业技术人员推动事业进步，过上更充实的生活。他通过“化繁为简”的方法，赋予他们达成自身目标的力量。</p>
+<h2 id="书摘">书摘</h2>
+<p>• 工作是公司的，职业生涯是自己的<br>
+• 绝不要做他人都在做的，像经营企业一样经营自己<br>
+• 设定目标, 驱动小目标向着大目标前进<br>
+• 人际交往能力，学会如何与人打交道 - 认可他人、永远不要批评、换位思考、避开地雷人<br>
+• 破解面试之道 - 博客，社交，扩大影响力，推销自己<br>
+• 就业选择- 雇员、咨询师、创业者<br>
+• 你是哪类开发人员 - 专业化（多博专精）<br>
+• 攀登晋升阶梯 - 承担责任、保证曝光度、自学、分享、<br>
+• 成为专业人士 - 严肃对待，保持专业习惯、追求品质、完善自我、坚守正道<br>
+• 赢得自由(如何辞职) - 开源节流、以副业的方式创业<br>
+• 成为自有职业者 - 获取客户，时薪+额外费用，应该为全职时薪2倍<br>
+• 开始创业 - 获得投资、谨慎出让股权<br>
+• 远程工作的生存策略 - 时间管理、自我激励、孤独感<br>
+• 假装自己能成功 - 有目的的将自己置与困境、破釜沉舟的勇气、自信而不自负、拥抱新问题<br>
+• 单调乏味的简历 - 雇一个简历写手、招聘者意见<br>
+• 请勿陷入对技术的狂热之中 - 保持开放心态<br>
+• 码农的营销课 - 提供自我价值、包装想法比想法本身更重要、塑造好自己形象<br>
+• 打造引人注目的品牌 - 品牌核心信息、视觉符号、一致性、曝光率<br>
+• 创建大获成功的博客 - 定期更新、持之以恒<br>
+• 为他人增加价值 - 帮别人解决问题<br>
+• 擅于运用社交媒体 - 专业化<br>
+• 演讲、培训和报告 - 做说话的极客、从团队分享开始、培训<br>
+• 著书立说，吸引追随者<br>
+• 百折不挠、越挫越勇 - 别太在意别人想法和眼光、别害怕自己出丑、勇敢的走出去<br>
+• 学习怎样学习、如何自我教育 - 纸上得来终觉浅、最好的办法就是付诸于实践，立即参与<br>
+• 十步学习法<br>
+1、了解全部 -&gt; 2、确定范围 -&gt; 3、定义目标 -&gt; 4、寻找资源 -&gt; 5、创建学习计划 -&gt; 6、筛选资源 -&gt; 7、开始学习，浅尝截止 -&gt; 8、动手操作，边玩边学 -&gt; 9、全面掌握，学以致用 -&gt; 10、乐为人师，融会贯通<br>
+• 十步学习法 - 第一步到第六步这些步骤只做一次(OKR)<br>
+• 十步学习法 - 第七步到第十步循环往复<br>
+• 寻找导师 -  找到你的尤达<br>
+• 开山收徒 - 成为尤达一样的大师<br>
+• 传道授业 - 若要学知识，必得为人师、知其然知其所以然、以谦虚的视角观察问题，以权威的视角诠释问题、心态谦卑，信心满满<br>
+• 你学要一个学位吗、还是可以对此忽略 - 学位是有优势的<br>
+• 发现自己的只是短板<br>
+• 一切始于专注 - 不要频繁切换任务，几种精力处理一件事情，将任务按照分类组合起来，高效处理<br>
+• 生产力提升计划 - 番茄工作法、看法计划。季度计划<br>
+• 番茄工作法 - 规划，追踪，记录，处理，以及可视化<br>
+• 定额工作法 - 承诺是完成定额工作法的核心<br>
+• 对自己负责 - 高效自我驱动<br>
+• 要不要多任务并行 - 批量处理任务如邮件，效率更高，<br>
+• 职业倦怠：我已找到解药 - 咬紧牙冠，经历痛苦、穿过倦怠的那堵墙，找到墙后的金子<br>
+• 时间是怎样被浪费掉的 - 戒掉电视、浪费时间、潜移默化思想、毫无意义；控制社交媒体<br>
+• 形成惯例的重要性<br>
+• 培养习惯、刷新你的代码 -找到坏习惯、改为好习惯、试着从小事做起<br>
+• 分解任务、如何吃掉一头大象 - 任务越大越难明确定义、分解任务、精确定义、减少完成难度<br>
+• 努力工作的价值、你为什么总是逃避努力工作 - 努力工作是成功的必要条件、工作的时候要既聪明又努力并需要毅力<br>
+• 任何行动都比不采取行动好 - 都没采取行动，怎么能指望有事发生那？跑起来的汽车更容易转向<br>
+• 怎样支配你的薪水 - 拒绝短期思维、长远打算、开源节流、不把薪水浪费在负债上、学会理财投资<br>
+• 怎样进行薪酬谈判 - 打造个人品牌、获得工作的方式、先出价输、多拿几个offer<br>
+• 期权：所有乐趣之所在<br>
+• 房地产投资面面观 - 低风险，高负债、房地产是很好的投资，以租养贷<br>
+• 你真的了解自己的退休计划吗 - 开源节流、用来投资、以资本获利，养下蛋公鸡、真正财务自由的方法用钱生钱<br>
+• 债务的危害 - 先还高利率债务，再存钱、存款利率低于贷款利率<br>
+• 我是如何做到33岁退休的 - 财务自由、在不想工作的时候不工作<br>
+• 为什么要破解自己的健康密码 - 健身要自己更有魅力、自信心<br>
+• 设定你的健身目标 - 把健身作为优先计划<br>
+• 热力学、热量和你 - 热量影响体重<br>
+• 动力：让你的屁股离开椅子<br>
+• 如何增长肌肉 - 合理膳食、摄入蛋白质<br>
+• 启动跑步程序<br>
+• 站立式办公及其他窍门<br>
+• 高科技健身装备：极客现身<br>
+• 心灵是如何影响身体的 - 无形控制有形、心态很重要<br>
+• 拥有正确的心态：重新启动 - 保持积极的心态、心态影响做事效率、劳逸结合才能保持良好的心态<br>
+• 构建一个积极的自我形象，规划你的大脑 - 不要被大脑中自我想象束缚、假装自己能成功，打破自我潜意识、把自己能转变成任何想要的形象<br>
+• 积极面对失败 - 别把失败看的太重、失败不是终点、你是否要为自己最终拥有的东西而战斗、把失败看做经验，而不是全盘否定、学会拥抱失败、接受失败、拥抱失败、不要停止那些有挑战或有危险的事情、走出去有目的的把自己放在有挑战的环境<br>
+• 结束语 -  塑造自己的自我价值、生活原本比朝9晚5的生活更精彩<br>
+• 如果你能写代码，你就能理解金融 - 货币是价值的体现，货币的总量决定货币价值；通货膨胀：货币价值变小，钱贬值，物价上升，减轻债务；通货紧缩：货币价值变大，钱升值，物价降低，增加债务；中央银行控制货币总量，抑制通胀或者通缩，抑制经济过热或过冷，控制法定存款准备金；普通银行靠把存款贷款给别人，赚取利率差价，银行可以互相拆借；金融体系的基础，风险、收益、流动性；<br>
+• 股市是如何运作的：系统的游戏规则 - 只是节俭是不够的，要让钱动起来，让钱生钱、投资；股市存在的目的为了让投资者更加方便的买入卖出股票；企业上市发行股票是为了筹集资金；交易量决定股票的流动性；低买高卖原则；做多：就是你看好大米会涨价，买入或借入大米囤起来，等大米价格上涨了就卖出去赚差价；做空：就是你看好大米会降价，跟大米老板借大米，然后卖出去换成钱，等大米降价再用钱买大米还给大米老板，赚取差价<br>
+• 垃圾进来垃圾出去：饮食和营养基础知识 - 碳水化合物、蛋白质、脂肪构成了我们摄入食物的主要组成部分；其他必须维生素；纤维；矿物质；水；深度加工的食品含有更多的糖分和防腐剂；清楚自己的饮食结构；<br>
+• 如何吃出健康来：披萨并不是一个食物组 - 控制热量总数；控制糖量摄入；</p>
+<h2 id="推荐书单">推荐书单</h2>
+<p>• 习惯的力量<br>
+• 精益创业<br>
+• 驱动力<br>
+• 积极思考就是力量<br>
+• The War of Art<br>
+• 人性的弱点<br>
+• 思考致富<br>
+• 心理控制方法<br>
+• 积极思考就是力量<br>
+• 阿特拉耸耸肩</p>
+<h3 id="软件开发类书单">软件开发类书单</h3>
+<p>• 代码大全<br>
+• 代码整洁之道<br>
+• Head First设计模式</p>
+<h3 id="投资类书单">投资类书单</h3>
+<p>• The Millionaire Real Estate Investor<br>
+• 穷爸爸富爸爸<br>
+• No-Hype Options Trading:Myths,Realities, and Straategies That Really Work</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker&k8s入门]]></title>
+        <id>https://fanguyun.github.io/post/dockerandk8s-ru-men/</id>
+        <link href="https://fanguyun.github.io/post/dockerandk8s-ru-men/">
+        </link>
+        <updated>2020-12-16T10:45:28.000Z</updated>
+        <summary type="html"><![CDATA[<p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。</p>
+<!-- more -->
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。<br>
+容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+<h3 id="dopcker常用命令">Dopcker常用命令</h3>
+<pre><code>docker pull image - 拉取Image
+docker container ls -a - 列出所有容器
+docker run -it centos - 交互式运行
+docker run -d containerid - 后台执行
+docker run -p 80 imageid - 将容器的80端口随机映射到宿主机的一个端口上
+docker run -p 8000:80 imageid - 将容器的80端口映射到宿主机的8000端口上
+docker run --name web image - 以别名启动Image
+docker container rm id - 删除container
+docker imgae rm id - 删除Image
+docker container ls -aq  - 列出所有container ID
+docker rm $(docker container ls -aq) - 删除所有container
+docker rm $(docker coontainer ls -f &quot;status=exited&quot; -q) - 删除所有已退出的container
+docker commit containerName repository - 基于container构建Image（不提倡，建议通过Dockfile）
+docker history imageid  - Image历史记录
+docker build -t repository . - 基于当前目录Dockerfile构建Image
+more Dockerfile - 查看Dockerfile
+docker ps -a - 显示所有的容器，包括未运行的
+docker run -d --link redis --name flask-redis -e REDIS_HOST=redis -p 6000:5000 jasonfan123/flask-redis - containei互相访问设置（-e设置环境变量）
+docker rm -f container - 强制停止并删除container
+Dokcer Container操作
+docker exex -it containerid /bin/bash - 进入指定容器执行指定命令
+docker stop containerid - 停止运行中的container
+docker start containerid - 启动停止的container
+docker inspect containerid - container详细信息
+</code></pre>
+<h3 id="dockerfile基本语法">Dockerfile基本语法</h3>
+<pre><code># FROM - 基础镜像，尽量使用官方Image作为BaseImage
+FROM scratch # - 制作baseImage（不使用任何Image）
+FROM centos # - 使用baseImage
+# LABEL - Image信息描述,Metadata不可少
+LABEL version=&quot;1.0&quot;
+LABEL description=&quot;this is des&quot;
+# RUN - 执行命令并创建新的Image Layer，避免无用分层，合并多条命令为一行用&amp;&amp;， 复杂的可用反斜杠\换行
+RUN yum update &amp;&amp; yum install -y vim \ python-dev  # - 反斜杆换行
+RUN apt-get update &amp;&amp; apt-get install -y perl &amp;&amp; rm -rf \ var/lib/apt/list/* # - 注意清理cache
+# WORKDIR - 设定当前工作目录,用WORKDIR,不要用RUN cd，尽量使用绝对目录
+WORKDIR /test # - 如果没有会自动创建test目录
+WORKDIR demo
+RUN pwd # - 输出结果应该是/test/demo
+# ADD &amp;&amp; COPY - 把本地环境文件添加到docker Image中
+# ADD or COPY - 大部分情况COPY优于ADD，ADD除了COPY还有额外功能（解压），添加远程文件/目录请使用curl或者wget
+ADD hello /
+ADD test.tar.gz / # - 添加到根目录并解压
+WORKDIR /root
+ADD hello test/ - /root/test/hello
+WORKDIR /ROOT
+COPY hello test/ 
+# ENV - 设置环境常量，尽量使用ENV增加可维护性
+ENV MYSQL_VERSION 5.6 # - 设置常量
+RUN apt-get install -y mysql-server=&quot;${MYSQL_VERSION}&quot; \ &amp;&amp; rm -rf /var/lib/apt/lists/* # - 引用常量
+# VOLUME &amp;&amp; EXPOER - 存储和网络
+# CMD &amp;&amp; ENTRYPOINT
+# CMD - 设置容器启动后默认执行的命令和参数，如果docker run指定了其他命令，CMD命令被忽略，如果定义了多个CMD，只有最后一个会执行
+# ENTRYPOINT -  设置容器启动时运行的命令，让容器以应用程序或者服务的形式运行，不会被忽略一定会执行，最佳实践：写一个shell脚本作为entrypoint
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT [&quot;docker-entrypoint.sh&quot;]
+# Shell和Exec格式
+# Shell格式 - 默认shell
+RUN apt-get install -y vim
+CMD echo &quot;hello docker&quot;
+ENTRYPOINT echo “hello docker” 
+# Exec格式 - 指定
+RUN [&quot;apt-get&quot;,&quot;install&quot;, &quot;-y&quot;,&quot;vim&quot;]
+CMD [&quot;/bin/echo&quot;, &quot;hello docker&quot;]
+ENTRYPOINT [&quot;/bin/echo&quot;, &quot;hello docker&quot;]
+Docker Image Push
+docker login
+docker push jasonfan123/centos-vim-new:latest
+</code></pre>
+<h3 id="数据持久化">数据持久化</h3>
+<pre><code># Dockerfile VOLUME # volume绕过container的文件系统，直接将数据写到host机器上，只是volume是被docker管理的，docker下所有的volume都在host机器上的指定目录下/var/lib/docker/volumes
+# VOLUME /var/lib/mysql
+docker volume ls - 查看volume
+docker run -v mysql:/var/lib/mysql - 重命名volume:路劲
+# Bind Mouting
+docker -v $(pwd):/root/aaa - 将宿主机当前目录映射到容器目录
+</code></pre>
+<h3 id="docker-compose">Docker Compose</h3>
+<pre><code>多容器应用：拉取多个image、创建多个container、要管理这些container
+Docker Compose 批处理，基于Docker的命令行工具，通过一个yml文件定义多容器的Docker应用，通过一条命令就可以根据yml文件去创建或者管理这个多个容器
+# 默认名字：docker-compose.yml
+# 三大概念： Services、Networks、Volumes
+# Services：
+    一个service代表一个container，可以从远程拉取iamge，也可以从本地的dockerfile build出来image
+    service的启动类似docker run，可以指定network和volume
+# docker-compose up - 启动多有yml文件容器，默认文件docker-compose.yml
+# docker-compose up -d - 后台运行
+# docker-compose -f xx.yml up - 指定yml文件  
+# docker-compose ps - 列出services
+# docker-compose start - 停止
+# docker-compose stop - 停止
+# docker-compose down - 停止并删除
+# docker-compose exec mysql bash - 进入容器并执行
+# docker-compose up --scale service=3 -d - 给service指定容器数量 (haproxy)
+  
+# wordprss &amp; mysql 示例
+version: '3'
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_PASSWORD: root
+    networks:
+      - my-bridge
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - my-bridge
+volumes:
+  mysql-data:
+networks:
+  my-bridge:
+    driver: bridge
+</code></pre>
+<h3 id="swarm-mode">Swarm Mode</h3>
+<p>集成在docker中的容器编排工具</p>
+<h3 id="基于docker的devops">基于Docker的devops</h3>
+<figure data-type="image" tabindex="1"><img src="https://fanguyun.github.io/post-images/1608115998615.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nrwl/NX工作区中lib差异化配置]]></title>
+        <id>https://fanguyun.github.io/post/ji-yu-nrwlnx-de-gong-zuo-qu-zhong-lib-zhong-ru-he-yin-yong-environmentts-chai-yi-hua-pei-zhi/</id>
+        <link href="https://fanguyun.github.io/post/ji-yu-nrwlnx-de-gong-zuo-qu-zhong-lib-zhong-ru-he-yin-yong-environmentts-chai-yi-hua-pei-zhi/">
+        </link>
+        <updated>2020-12-04T06:14:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>基于environment在业务代码中实现不同环境下的差异化配置</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>基于environment在业务代码中实现不同环境下的差异化配置</p>
+<!-- more -->
+<h3 id="新增多环境environment">新增多环境environment</h3>
+<h4 id="1-新增特定环境配置">1、新增特定环境配置</h4>
+<pre><code># 如 environment.staging.ts
+export const environment = {
+  production: true,
+  staging: true,
+  apiUrl: 'http://my-prod-url'
+};
+</code></pre>
+<h4 id="2-在angularjson-中添加-staging-环境配置">2、在angular.json 中添加 staging 环境配置</h4>
+<pre><code>&quot;configurations&quot;: {
+  &quot;production&quot;: { ... },
+  &quot;staging&quot;: {
+    &quot;fileReplacements&quot;: [
+      {
+        &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
+        &quot;with&quot;: &quot;src/environments/environment.staging.ts&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="3-基于staging的构建">3. 基于staging的构建</h4>
+<pre><code>ng build --configuration=staging
+</code></pre>
+<h3 id="基于injectiontoken的di依赖注入">基于InjectionToken的DI（依赖注入）</h3>
+<h4 id="1-在lib中创建目录app-config及indexts">1、在lib中创建目录app-config及index.ts</h4>
+<pre><code>// index.ts 声明InjectionToken
+import { InjectionToken } from '@angular/core';
+export const APP_CONFIG = new InjectionToken('Application config');
+</code></pre>
+<h4 id="2-修改tsconfigjson添加导出路径">2、修改tsconfig.json添加导出路径</h4>
+<pre><code>&quot;paths&quot;: {
+      &quot;@app-workspace/app-config&quot;: [&quot;libs/app-config/index.ts&quot;]
+ }
+</code></pre>
+<h4 id="3-appmodulets中providers注入">3、app.module.ts中providers注入</h4>
+<pre><code>import { APP_CONFIG } from '@app-workspace/app-config';
+import { environment } from '../environments/environment';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: environment}
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+</code></pre>
+<h4 id="4-lib中使用">4、lib中使用</h4>
+<pre><code>import { APP_CONFIG } from '@app-workspace/app-config';
+import { Inject, Injectable } from '@angular/core';
+
+@Injectable()
+export class AuthService {
+
+  constructor(
+    @Inject(APP_CONFIG) private appConfig: any
+  ) {
+        console.log(this.appConfig.apiUrl); 
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[docz-记录你的东西从未如此简单]]></title>
+        <id>https://fanguyun.github.io/post/docz-ji-lu-ni-de-dong-xi-cong-wei-ru-ci-jian-dan/</id>
+        <link href="https://fanguyun.github.io/post/docz-ji-lu-ni-de-dong-xi-cong-wei-ru-ci-jian-dan/">
+        </link>
+        <updated>2020-09-18T03:17:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>Docz基于MDX，MDX是Markdown + JSX，它为Markdown带来了组件世界。 MDX使得可以在Markdown样式的文件中导入和使用组件。 Docz充分利用了这一点，并提供了许多内置组件，这些组件可以增强和加快文档工作流程。Docz输出静态站点，你可以使用任何静态网站托管提供商来部署生成的docz网站。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Docz基于MDX，MDX是Markdown + JSX，它为Markdown带来了组件世界。 MDX使得可以在Markdown样式的文件中导入和使用组件。 Docz充分利用了这一点，并提供了许多内置组件，这些组件可以增强和加快文档工作流程。Docz输出静态站点，你可以使用任何静态网站托管提供商来部署生成的docz网站。</p>
+<!-- more -->
+<h4 id="特性">特性</h4>
+<ul>
+<li>基于Gatsby，快速的开发/构建体验</li>
+<li>简单配置</li>
+<li>自定义主题</li>
+<li>基于MDX</li>
+<li>插件化</li>
+<li>TypeScript支持</li>
+</ul>
+<h4 id="基本使用">基本使用</h4>
+<h5 id="安装">安装</h5>
+<pre><code>yarn add docz react react-dom --dev
+</code></pre>
+<h5 id="创建mdx文件">创建.mdx文件</h5>
+<pre><code>---
+name: Button
+route: /
+---
+
+import { Playground, Props } from 'docz'
+import { Button } from './'
+
+# Button
+
+&lt;Props of={Button} /&gt;
+
+## Basic usage
+
+&lt;Playground&gt;
+  &lt;Button&gt;Click me&lt;/Button&gt;
+  &lt;Button kind=&quot;secondary&quot;&gt;Click me&lt;/Button&gt;
+&lt;/Playground&gt;
+</code></pre>
+<h5 id="dev">dev</h5>
+<pre><code>yarn docz dev
+</code></pre>
+<h5 id="build">build</h5>
+<p>yarn docz构建将在.docz/dist/中生成一个静态站点。<br>
+通过在doczrc.js中或在命令行中提供dest字段的路径来使yarn docz build到另一个目录：yarn docz build --dest docs-site-directory。</p>
+<pre><code>yarn docz build
+</code></pre>
+<h4 id="其他">其他</h4>
+<h5 id="创建新应用">创建新应用</h5>
+<pre><code>npx create-docz-app my-docz-app
+# or
+yarn create docz-app my-docz-app --example typescript
+</code></pre>
+<h5 id="添加到现有项目">添加到现有项目</h5>
+<pre><code>yarn add docz # react react-dom
+# or
+npm install docz # react react-dom
+</code></pre>
+<h5 id="内置组件">内置组件</h5>
+<p>使用<Playground>组件，可以在可实时编辑的游乐场中渲染组件，并直接查看所使用代码的输出：</p>
+<pre><code># Playground Component
+---
+name: Button
+route: /
+---
+
+import { Playground } from 'docz'
+import { Button } from './Button'
+
+# Button
+
+## Basic usage
+
+&lt;Playground&gt;
+  &lt;Button&gt;Click me&lt;/Button&gt;
+  &lt;Button kind=&quot;secondary&quot;&gt;Click me&lt;/Button&gt;
+&lt;/Playground&gt;
+</code></pre>
+<h5 id="文档设置">文档设置</h5>
+<pre><code>---
+name: My Document
+route: /custom-route
+menu: Documents
+---
+</code></pre>
+<ul>
+<li>name文档的名称，用作页面标题</li>
+<li>route *（可选）*到文档生成页面的路径或路径。例如/docs/my-component</li>
+<li>menu*（可选）*包含文档的菜单。文档分组到一个菜单中</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端性能优化指南]]></title>
+        <id>https://fanguyun.github.io/post/qian-duan-xing-neng-you-hua-zhi-nan/</id>
+        <link href="https://fanguyun.github.io/post/qian-duan-xing-neng-you-hua-zhi-nan/">
+        </link>
+        <updated>2020-07-24T09:01:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>性能优化一直以来都是前端工程领域中的一个重要部分。网站应用的性能（加载速度、交互流畅度）优化对于提高用户留存、转化率等都有积极影响。可以理解为，提升你的网站性能，就是提升你的业务数据（甚至是业务收入）。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>性能优化一直以来都是前端工程领域中的一个重要部分。网站应用的性能（加载速度、交互流畅度）优化对于提高用户留存、转化率等都有积极影响。可以理解为，提升你的网站性能，就是提升你的业务数据（甚至是业务收入）。</p>
+<!-- more -->
+<p>性能优化广义上会包含前端优化和后端优化。后端优化的关注点更多的时候是在增加资源利用率、降低资源成本以及提高稳定性上。相较于后端，前端的性能优化会更直接与用户的体验挂钩。从用户体验侧来说，前端服务 5s 的加载时间优化缩减 80%(1s) 与后端服务 50ms 的响应优化缩减 80%(10ms) 相比，用户的体验提升会更大。因此很多时候，与体验相关的性能的瓶颈会出现在前端。</p>
+<h3 id="目的">目的</h3>
+<ul>
+<li>
+<p>让页面加载的更快</p>
+</li>
+<li>
+<p>对用户操作响应更及时，为用户带来更好的使用体验</p>
+</li>
+<li>
+<p>减少请求，降低服务器负荷，节省资源</p>
+</li>
+</ul>
+<h3 id="原则">原则</h3>
+<ul>
+<li>
+<p>建立性能优化意识</p>
+</li>
+<li>
+<p>目标：比你最快的竞争对手快至少20%</p>
+</li>
+<li>
+<p>选择正确的指标</p>
+</li>
+<li>
+<p>从具有代表性的用户使用的设备收集数据</p>
+</li>
+<li>
+<p>深入理解业务</p>
+</li>
+</ul>
+<h3 id="如何衡量">如何衡量</h3>
+<pre><code>以用户为中心的性能指标：
+</code></pre>
+<p>​		1、哪些指标能够最准确的衡量用户所感受到的性能？</p>
+<p>​		2、如何针对实际用户来衡量这些指标？</p>
+<p>​		3、如何解读衡量结果以确定应用是否速度快？</p>
+<p>​		4、了解应用的实际用户性能之后，如何避免性能下降并在未来提高性能？</p>
+<h3 id="基本概述雅虎前端优化35条">基本概述（雅虎前端优化35条）</h3>
+<h4 id="内容">内容</h4>
+<p>1、尽量减少HTTP请求数</p>
+<p>80%的终端用户响应时间都花在了前端上，其中大部分时间都在下载页面上的各种组件：图片，样式表，脚本等等。减少组件数必然能够减少页面提交的HTTP请求数，这是让页面更快的关键。</p>
+<p><strong>合并文件</strong>是通过把所有脚本放在一个文件中的方式来减少请求数的，当然，也可以合并所有的CSS。</p>
+<p>2、减少DNS查找</p>
+<p>3、避免重定向</p>
+<p>4、让Ajax可缓存</p>
+<p>5、延迟加载</p>
+<p>6、预加载</p>
+<p>7、减少DOM元素数量</p>
+<p>8、划分到不同域名</p>
+<p>9、尽量减少Iframe的使用</p>
+<p>10、避免404错误</p>
+<h4 id="服务器">服务器</h4>
+<p>1、使用CDN</p>
+<p>2、添加Expires或Cache-Control响应头，使用缓存</p>
+<p>3、启用Gzip</p>
+<p>4、配置Etag</p>
+<p>5、尽早输出缓存</p>
+<p>6、Ajax请求使用Get</p>
+<p>7、避免src、href为空</p>
+<h4 id="cookie">Cookie</h4>
+<p>1、减少cookie使用</p>
+<p>2、静态资源使用无cookie域名</p>
+<h4 id="css">CSS</h4>
+<p>1、把样式表放在head中</p>
+<p>2、不要使用CSS表达式</p>
+<p>3、使用<link>代替@import</p>
+<p>4、不要使用filter(已废弃，可用来解决IE老版本png背景透明问题)</p>
+<h4 id="javascript">Javascript</h4>
+<p>1、脚本放在页面底部</p>
+<p>2、使用外部JS和CSS</p>
+<p>3、压缩JS和CSS</p>
+<p>4、移除重复脚本</p>
+<p>5、减少DOM操作</p>
+<p>6、使用高效的事件处理</p>
+<h4 id="图片">图片</h4>
+<p>1、优化图片</p>
+<p>2、使用CSS Sprite</p>
+<p>3、不要在HTML中缩放图片</p>
+<p>4、使用体积小、可缓存的favicon.ico</p>
+<h4 id="移动端">移动端</h4>
+<p>1、保证所有组件小于25K</p>
+<p>2、打包内容为分段（multipart）文档</p>
+<h3 id="性能数据采集监控">性能数据采集/监控</h3>
+<h4 id="w3c-navigation-timing-api的性能指标">W3C Navigation Timing API的性能指标</h4>
+<p>W3C性能小组引入了 Navigation Timing API ，实现了自动、精准的页面性能打点；开发者可以通过 <code>window.performance</code> 属性获取。</p>
+<ul>
+<li><code>performance.timing</code> 接口（定义了从 <code>navigationStart</code> 至 <code>loadEventEnd</code> 的 21 个只读属性）</li>
+<li><code>performance.navigation</code>（定义了当前文档的导航信息，比如是重载还是向前向后等）</li>
+</ul>
+<p>W3C Navigation Timing V2处理模型图:</p>
+<figure data-type="image" tabindex="1"><img src="http://raw.githubusercontent.com/fanguyun214/picgo/master/img/timestamp-diagram.svg" alt="" loading="lazy"></figure>
+<p>从当前浏览器窗口卸载旧页面开始，到新页面加载完成，整个过程一共被切分为 9 个小块：提示卸载旧文档、重定向/卸载、应用缓存、DNS 解析、TCP 握手、HTTP 请求处理、HTTP 响应处理、DOM 处理、文档装载完成。每个小块的首尾、中间做事件分界，取 Unix 时间戳，两两事件之间计算时间差，从而获取中间过程的耗时（精确到毫秒级别）。</p>
+<h5 id="指标解读">指标解读:</h5>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>navigationStart</td>
+<td>当前浏览器窗口的前一个网页关闭，发生unload事件时的Unix毫秒时间戳。如果没有前一个网页，则等于fetchStart属性</td>
+</tr>
+<tr>
+<td>unloadEventStart</td>
+<td>如果前一个网页与当前网页属于同一个域名，则返回前一个网页的unload事件发生时的Unix毫秒时间戳。如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0</td>
+</tr>
+<tr>
+<td>unloadEventEnd</td>
+<td>如果前一个网页与当前网页属于同一个域名，则返回前一个网页unload事件的回调函数结束时的Unix毫秒时间戳。如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0</td>
+</tr>
+<tr>
+<td>redirectStart</td>
+<td>返回第一个HTTP跳转开始时的Unix毫秒时间戳。如果没有跳转，或者不是同一个域名内部的跳转，则返回值为0</td>
+</tr>
+<tr>
+<td>redirectEnd</td>
+<td>返回最后一个HTTP跳转结束时（即跳转回应的最后一个字节接受完成时）的Unix毫秒时间戳。如果没有跳转，或者不是同一个域名内部的跳转，则返回值为0</td>
+</tr>
+<tr>
+<td>fetchStart</td>
+<td>返回浏览器准备使用HTTP请求读取文档时的Unix毫秒时间戳。该事件在网页查询本地缓存之前发生</td>
+</tr>
+<tr>
+<td>domainLookupStart</td>
+<td>返回域名查询开始时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值</td>
+</tr>
+<tr>
+<td>domainLookupEnd</td>
+<td>返回域名查询结束时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值</td>
+</tr>
+<tr>
+<td>connectStart</td>
+<td>返回HTTP请求开始向服务器发送时的Unix毫秒时间戳。如果使用持久连接（persistent connection），则返回值等同于fetchStart属性的值</td>
+</tr>
+<tr>
+<td>connectEnd</td>
+<td>返回浏览器与服务器之间的连接建立时的Unix毫秒时间戳。如果建立的是持久连接，则返回值等同于fetchStart属性的值。连接建立指的是所有握手和认证过程全部结束</td>
+</tr>
+<tr>
+<td>secureConnectionStart</td>
+<td>返回浏览器与服务器开始安全链接的握手时的Unix毫秒时间戳。如果当前网页不要求安全连接，则返回0</td>
+</tr>
+<tr>
+<td>requestStart</td>
+<td>返回浏览器向服务器发出HTTP请求时（或开始读取本地缓存时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>responseStart</td>
+<td>返回浏览器从服务器收到（或从本地缓存读取）第一个字节时的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>responseEnd</td>
+<td>返回浏览器从服务器收到（或从本地缓存读取）最后一个字节时（如果在此之前HTTP连接已经关闭，则返回关闭时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>domLoading</td>
+<td>返回当前网页DOM结构开始解析时（即Document.readyState属性变为“loading”、相应的readystatechange事件触发时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>domInteractive</td>
+<td>返回当前网页DOM结构结束解析、开始加载内嵌资源时（即Document.readyState属性变为“interactive”、相应的readystatechange事件触发时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>domContentLoadedEventStart</td>
+<td>返回当前网页DOMContentLoaded事件发生时（即DOM结构解析完毕、所有脚本开始运行时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>domContentLoadedEventEnd</td>
+<td>返回当前网页所有需要执行的脚本执行完成时的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>domComplete</td>
+<td>返回当前网页DOM结构生成时（即Document.readyState属性变为“complete”，以及相应的readystatechange事件发生时）的Unix毫秒时间戳</td>
+</tr>
+<tr>
+<td>loadEventStart</td>
+<td>返回当前网页load事件的回调函数开始时的Unix毫秒时间戳。如果该事件还没有发生，返回0</td>
+</tr>
+<tr>
+<td>loadEventEnd</td>
+<td>返回当前网页load事件的回调函数运行结束时的Unix毫秒时间戳。如果该事件还没有发生，返回0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="关键性能指标">关键性能指标</h5>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>计算公式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First Meaningful Paint (FMP)</td>
+<td>首屏时间</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>fpt</td>
+<td>First Paint Time，首次渲染时间（白屏时间）</td>
+<td>responseEnd - fetchStart</td>
+<td>从请求开始到浏览器开始解析第一批HTML文档字节的时间差</td>
+</tr>
+<tr>
+<td>tti</td>
+<td>Time to Interact，首次可交互时间</td>
+<td>domInteractive - fetchStart</td>
+<td>浏览器完成所有HTML解析并且完成DOM构建，此时浏览器开始加载资源</td>
+</tr>
+<tr>
+<td>ready</td>
+<td>HTML加载完成时间， 即DOM Ready时间</td>
+<td>domContentLoadEventEnd - fetchStart</td>
+<td>如果页面有同步执行的JS，则同步JS执行时间 = ready - tti</td>
+</tr>
+<tr>
+<td>load</td>
+<td>页面完全加载时间</td>
+<td>loadEventStart - fetchStart</td>
+<td>load = 首次渲染时间 + DOM解析耗时 + 同步JS执行 + 资源加载耗时</td>
+</tr>
+<tr>
+<td>firstbyte</td>
+<td>首包时间</td>
+<td>responseStart - domainLookupStart</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5 id="区间段耗时">区间段耗时</h5>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>计算公式</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dns</td>
+<td>DNS查询耗时</td>
+<td>domainLookupEnd - domainLookupStart</td>
+<td>无</td>
+</tr>
+<tr>
+<td>tcp</td>
+<td>TCP连接耗时</td>
+<td>connectEnd - connectStart</td>
+<td>无</td>
+</tr>
+<tr>
+<td>ttfb</td>
+<td>Time to First Byte（TTFB），请求响应耗时。</td>
+<td>responseStart - requestStart</td>
+<td>TTFB有多种计算方式</td>
+</tr>
+<tr>
+<td>trans</td>
+<td>内容传输耗时</td>
+<td>responseEnd - responseStart</td>
+<td>无</td>
+</tr>
+<tr>
+<td>dom</td>
+<td>DOM解析耗时</td>
+<td>domInteractive - responseEnd</td>
+<td>无</td>
+</tr>
+<tr>
+<td>res</td>
+<td>资源加载耗时</td>
+<td>loadEventStart - domContentLoadedEventEnd</td>
+<td>表示页面中的同步加载资源</td>
+</tr>
+<tr>
+<td>ssl</td>
+<td>SSL安全连接耗时</td>
+<td>connectEnd - secureConnectionStart</td>
+<td>只在HTTPS下有效</td>
+</tr>
+</tbody>
+</table>
+<h5 id="注意点">注意点</h5>
+<ul>
+<li>
+<p>通过window.performance.timing所获的的页面渲染所相关的数据，在单页应用中改变了url但不刷新页面的情况下是不会更新的。因此如果仅仅通过该api是无法获得每一个子路由所对应的页面渲染的时间。如果需要上报切换路由情况下每一个子页面重新render的时间，需要自定义上报。</p>
+</li>
+<li>
+<p>通过window.performance.getEntries()所获取的资源加载和异步请求所相关的数据，在页面切换路由的时候会重新的计算，可以实现自动的上报。</p>
+</li>
+</ul>
+<h4 id="spa模式">SPA模式</h4>
+<p>Navigation Timing API可以监控大部分前端页面的性能。但随着SPA模式的盛行，类似Angular/Reac/Vuet等框架的普及，页面内容渲染的时机被改变了，W3C标准无法完全满足原来的监控意义。以Chrome为首的浏览器一直在推动以用户为中心的性能指标，并且逐步开放API。如lighthouse，Web Vitals等提供浏览器插件/命令行工具/NPM包。</p>
+<h5 id="关注点">关注点</h5>
+<table>
+<thead>
+<tr>
+<th>体验</th>
+<th>指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否发生</td>
+<td>首次绘制(FP)首次内容绘制(FCP)</td>
+</tr>
+<tr>
+<td>是否有用</td>
+<td>首次有效绘制(FMP)/主角元素计时</td>
+</tr>
+<tr>
+<td>是否可用</td>
+<td>可交互事件(TTI)</td>
+</tr>
+<tr>
+<td>是否令人愉快</td>
+<td>耗时较长的任务(在技术上不存在耗时较长的任务)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="关键指标">关键指标</h5>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FP(First Paint)</td>
+<td>页面在导航后首次呈现出不同于导航前内容的时间点</td>
+</tr>
+<tr>
+<td>FCP(First Contentful Paint)</td>
+<td>首次绘制任何文本，图像，非空白canvas或SVG的时间点</td>
+</tr>
+<tr>
+<td>TTI(Time to Interactive)</td>
+<td>从页面开始加载到页面主要资源加载之间的时间</td>
+</tr>
+<tr>
+<td>LCP(Largest Contentful Paint)</td>
+<td>可视区域“内容”最大的可见元素开始出现在页面上的时间点</td>
+</tr>
+<tr>
+<td>CLS(Cumulative Layout Shift)</td>
+<td>表示用户经历的意外 layout 偏移的频率</td>
+</tr>
+<tr>
+<td>TBT(Total Blocking Time)</td>
+<td>表示从 FCP 到 TTI 之间，所有 <a href="https://web.dev/custom-metrics/#long-tasks-api">long task</a> 的阻塞时间之和</td>
+</tr>
+</tbody>
+</table>
+<p>FP和FCP可能是相同的时间，也可能FP先于FCP。下图展示了 FP 和 FCP 的区别:</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fanguyun214/picgo/master/img/image-20200724163348918.png" alt="image-20200724163348918" loading="lazy"></figure>
+<p>通过 window.performance.getEntriesByType('paint') 获取两个时间点的值。</p>
+<pre><code>performance.getEntriesByType('paint');
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fanguyun214/picgo/master/img/image-20200724163707377.png" alt="image-20200724163707377" loading="lazy"></figure>
+<p>LCP可以通过 Chrome 的 PerformanceObserver API 计算它:</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fanguyun214/picgo/master/img/image-20200724163928098.png" alt="image-20200724163928098" loading="lazy"></figure>
+<pre><code>// Create a variable to hold the latest LCP value (since it can change).
+let lcp;
+
+// Create the PerformanceObserver instance.
+const po = new PerformanceObserver((entryList) =&gt; {
+  const entries = entryList.getEntries();
+  const lastEntry = entries[entries.length - 1];
+
+  // Update `lcp` to the latest value, using `renderTime` if it's available,
+  // otherwise using `loadTime`. (Note: `renderTime` may not be available if
+  // the element is an image and it's loaded cross-origin without the
+  // `Timing-Allow-Origin` header.)
+  lcp = lastEntry.renderTime || lastEntry.loadTime;
+});
+
+// Observe entries of type `largest-contentful-paint`, including buffered
+// entries, i.e. entries that occurred before calling `observe()`.
+po.observe({type: 'largest-contentful-paint', buffered: true});
+
+// Send the latest LCP value to your analytics server once the user
+// leaves the tab.
+addEventListener('visibilitychange', function fn() {
+  if (lcp &amp;&amp; document.visibilityState === 'hidden') {
+    console.log('LCP:', lcp);
+    removeEventListener('visibilitychange', fn, true);
+  }
+}, true);
+
+</code></pre>
+<h5 id="优化-fpfcp">优化 FP/FCP</h5>
+<p>从文档的 <code>&lt;head&gt;</code> 中移除任何阻塞渲染的脚本或样式表，可以减少首次绘制和首次内容绘制前的等待时间。</p>
+<p>花时间确定向用户指出“正在发生”所需的最小样式集，并将其内联到 <code>&lt;head&gt;</code> 中（或者使用 <a href="https://developers.google.com/web/fundamentals/performance/http2#server_push">HTTP/2 服务器推送</a>)），即可实现极短的首次绘制时间。</p>
+<p><a href="https://developers.google.com/web/updates/2015/11/app-shell">应用 shell 模式</a>可以很好地说明如何针对<a href="https://developers.google.com/web/progressive-web-apps">渐进式网页应用</a>实现这一点。</p>
+<h5 id="优化-fmptti">优化 FMP/TTI</h5>
+<p>确定页面上最关键的界面元素（主角元素）之后，您应确保初始脚本加载仅包含渲染这些元素并使其可交互所需的代码。</p>
+<p>初始 JavaScript 软件包中所包含的任何与主角元素无关的代码都会延长可交互时间。 没有理由强迫用户设备下载并解析当前不需要的 JavaScript 代码。</p>
+<p>一般来说，您应该尽可能缩短 FMP 与 TTI 之间的时间。 如果无法最大限度缩短此时间，界面绝对有必要明确指出页面尚不可交互。</p>
+<p>对于用户来说，其中一种最令人失望的体验就是点按元素后毫无反应。</p>
+<h5 id="避免出现耗时较长的任务">避免出现耗时较长的任务</h5>
+<p>拆分代码并按照优先顺序排列要加载的代码，不仅可以缩短页面可交互时间，还可以减少耗时较长的任务，然后即有希望减少输入延迟及慢速帧。</p>
+<p>除了将代码拆分为多个单独的文件之外，您还可将大型同步代码块拆分为较小的块，以便以异步方式执行，或者<a href="https://developers.google.com/web/updates/2015/08/using-requestidlecallback">推迟到下一空闲点</a>。 以异步方式在较小的块中执行此逻辑，可在主线程中留出空间，供浏览器响应用户输入。</p>
+<p>最后，您应确保测试第三方代码，并对任何低速运行的代码追责。 产生大量耗时较长任务的第三方广告或跟踪脚本对您业务的伤害大于帮助。</p>
+<h3 id="数据上报">数据上报</h3>
+<h4 id="使用的img标签get请求">使用的img标签get请求</h4>
+<ul>
+<li>不存在AJAX跨域问题，可做跨源的请求</li>
+<li>很古老的标签，没有浏览器兼容性问题</li>
+</ul>
+<pre><code>var i = new Image();
+i.onload = i.onerror = i.onabort = function () {
+  i = i.onload = i.onerror = i.onabort = null;
+}
+i.src = url;
+</code></pre>
+<h4 id="navigatorsendbeacon">navigator.sendBeacon</h4>
+<p>大部分现代浏览器都支持 navigator.sendBeacon方法。这个方法可以用来发送一些统计和诊断的小量数据，特别适合上报统计的场景。</p>
+<ul>
+<li>数据可靠，浏览器关闭请求也照样能发</li>
+<li>异步执行，不会影响下一页面的加载</li>
+<li>API使用简单</li>
+</ul>
+<pre><code>window.addEventListener('unload', logData, false);
+
+function logData() {
+    navigator.sendBeacon(&quot;/log&quot;, analyticsData);
+}
+</code></pre>
+<p>当浏览器支持sendBeacon方法，优先使用该方法，使用img方式降级上报。</p>
+<h3 id="参考">参考</h3>
+<ul>
+<li>
+<p><a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#%E4%BB%A5%E7%94%A8%E6%88%B7%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87_2">以用户为中心的性能指标</a></p>
+</li>
+<li>
+<p><a href="https://juejin.im/post/5ecc5521e51d45788e17dcc6">解读新一代 Web 性能体验和质量指标</a></p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NgRx使用]]></title>
+        <id>https://fanguyun.github.io/post/ngrx-shi-yong/</id>
+        <link href="https://fanguyun.github.io/post/ngrx-shi-yong/">
+        </link>
+        <updated>2020-07-21T09:22:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>NgRx是用于在Angular中构建反应式应用程序的框架。NgRx提供状态管理，副作用隔离，实体集合管理，路由器绑定，代码生成以及开发人员工具，这些工具可增强开发人员在构建许多不同类型的应用程序时的体验。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>NgRx是用于在Angular中构建反应式应用程序的框架。NgRx提供状态管理，副作用隔离，实体集合管理，路由器绑定，代码生成以及开发人员工具，这些工具可增强开发人员在构建许多不同类型的应用程序时的体验。</p>
+<!-- more -->
+<h3 id="为什么要使用ngrx进行状态管理">为什么要使用NgRx进行状态管理？</h3>
+<p>NgRx通过存储单个状态和使用操作来表达状态更改，从而提供了用于创建可维护的显式应用程序的状态管理。</p>
+<ul>
+<li>
+<p><strong>可序列化</strong><br>
+通过规范化状态变化并将其传递给可观察对象，NgRx提供了可序列化性，并确保状态可预测地存储。这样可以将状态保存到外部存储，例如localStorage。<br>
+此外，它还允许从Store Devtools检查，下载，上传和调度操作。</p>
+</li>
+<li>
+<p><strong>类型安全</strong><br>
+依靠TypeScript编译器来保证程序正确性，从而在整个体系结构中提高了类型安全性。</p>
+</li>
+<li>
+<p><strong>封装</strong><br>
+使用NgRx Effects和Store，可以将与外部资源副作用（例如网络请求，Web套接字和任何业务逻辑）的任何交互都与UI隔离。这种隔离允许使用更多纯净和简单的组件，并保持单一职责原则。</p>
+</li>
+<li>
+<p><strong>可测试的</strong><br>
+由于Store使用纯函数来更改状态和从状态中选择数据，并且能够将副作用与UI隔离，因此测试变得非常简单。NgRx还提供诸如provideMockStore和provideMockActions用于隔离测试的测试设置，并提供更好的测试体验。</p>
+</li>
+<li>
+<p><strong>性能</strong><br>
+存储建立在单个不变的数据状态上，使用OnPush策略使更改检测变成一项非常容易的任务。NgRx还由可记忆的选择器功能提供支持，这些选择器功能可优化状态查询计算。</p>
+</li>
+</ul>
+<h3 id="何时应使用ngrx进行状态管理">何时应使用NgRx进行状态管理</h3>
+<p>当管理服务中的状态不再足够时，在构建具有大量用户交互和多个数据源的应用程序时，可能会使用NgRx。<br>
+SHARI原则可以回答“我何时需要NgRx”这个问题：</p>
+<ul>
+<li>Shared：由许多组件和服务的访问的状态。</li>
+<li>Hydrated：从外部存储持久化。</li>
+<li>Available：状态，需要时可用重新进入路线。</li>
+<li>Retrieved：必须附带副作用的状态。</li>
+<li>Impacted：受其他来源的行动影响的状态。</li>
+</ul>
+<h3 id="ngrxstore">@ngrx/store</h3>
+<p>Store是受Redux启发的RxJS支持的Angular应用程序状态管理。 Store是一个受控状态容器，旨在帮助在Angular上编写高性能，一致的应用程序。</p>
+<h3 id="关键概念">关键概念</h3>
+<ul>
+<li>Actions: 动作描述从组件和服务调度的唯一事件</li>
+<li>State: 状态更改由称为简化器的纯函数处理，这些函数采用当前状态和最新操作来计算新状态。</li>
+<li>Selectors: 选择器是用于选择，导出和组成状态块的纯函数。</li>
+<li>State是通过Store访问的，状态是可观察的，行为是观察者。</li>
+</ul>
+<h3 id="状态流">状态流</h3>
+<p>下图表示NgRx中应用程序状态的总体一般流程：<br>
+<img src="https://fanguyun.github.io/post-images/1595323865715.png" alt="" loading="lazy"></p>
+<h3 id="安装">安装</h3>
+<pre><code>// use npm 
+npm install @ngrx/store --save
+// use yarn 
+yarn add @ngrx/store
+// use ng add
+ng add @ngrx/store
+</code></pre>
+<h3 id="示例">示例</h3>
+<p>以下教程向您展示如何管理计数器的状态，以及如何在Angular组件中选择和显示它:<br>
+1、创建一个名为counter.actions.ts的新文件，以描述递增，递减和重置其值的计数器动作。</p>
+<pre><code>// src/app/counter.actions.ts
+import { createAction } from '@ngrx/store';
+
+export const increment = createAction('[Counter Component] Increment');
+export const decrement = createAction('[Counter Component] Decrement');
+export const reset = createAction('[Counter Component] Reset');
+</code></pre>
+<p>2、根据提供的操作对reducer函数进行细化以处理计数器值的更改</p>
+<pre><code>// src/app/counter.reducer.ts
+import { createReducer, on } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+export const initialState = 0;
+
+const _counterReducer = createReducer(initialState,
+  on(increment, state =&gt; state + 1),
+  on(decrement, state =&gt; state - 1),
+  on(reset, state =&gt; 0),
+);
+
+export function counterReducer(state, action) {
+  return _counterReducer(state, action);
+}
+</code></pre>
+<p>3、从@ ngrx / store和counter.reducer文件导入StoreModule。</p>
+<pre><code>// src/app/app.module.ts (imports)
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+</code></pre>
+<p>4、在AppModule的imports数组中添加StoreModule.forRoot函数，其中包含一个对象，该对象包含计数和管理计数器状态的counterReducer。 StoreModule.forRoot（）方法注册在整个应用程序中访问商店所需的全局提供程序。</p>
+<pre><code>// src/app/app.module.ts (StoreModule)
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({ count: counterReducer })
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+</code></pre>
+<p>5、在app文件夹中创建一个名为my-counter的新组件。将存储服务注入到组件中以分派计数器动作，并使用select运算符从状态中选择数据。<br>
+使用按钮更新MyCounterComponent模板，以调用递增，递减和重置方法。使用异步管道订阅可观察的count。</p>
+<pre><code>// src/app/my-counter/my-counter.component.html
+&lt;button id=&quot;increment&quot; (click)=&quot;increment()&quot;&gt;Increment&lt;/button&gt;
+
+&lt;div&gt;Current Count: {{ count$ | async }}&lt;/div&gt;
+
+&lt;button id=&quot;decrement&quot; (click)=&quot;decrement()&quot;&gt;Decrement&lt;/button&gt;
+
+&lt;button id=&quot;reset&quot; (click)=&quot;reset()&quot;&gt;Reset Counter&lt;/button&gt;
+</code></pre>
+<p>使用用于计数的选择器和用于调度Increment，Decrement和Reset操作的方法更新MyCounterComponent类</p>
+<pre><code>// src/app/my-counter/my-counter.component.ts
+import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset } from '../counter.actions';
+
+@Component({
+  selector: 'app-my-counter',
+  templateUrl: './my-counter.component.html',
+  styleUrls: ['./my-counter.component.css'],
+})
+export class MyCounterComponent {
+  count$: Observable&lt;number&gt;;
+
+  constructor(private store: Store&lt;{ count: number }&gt;) {
+    this.count$ = store.pipe(select('count'));
+  }
+
+  increment() {
+    this.store.dispatch(increment());
+  }
+
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+
+  reset() {
+    this.store.dispatch(reset());
+  }
+}
+</code></pre>
+<p>6、将MyCounter组件添加到您的AppComponent模板中。</p>
+<pre><code>// src/app/app.component.html
+&lt;app-my-counter&gt;&lt;/app-my-counter&gt;
+</code></pre>
+<p>单击递增，递减和重置按钮以更改计数器的状态。</p>
+<p>让我们介绍一下您所做的事情：</p>
+<ul>
+<li>定义的事件表达动作。</li>
+<li>定义了一个reducer功能来管理计数器的状态。</li>
+<li>注册了整个应用程序中可用的全局状态容器。</li>
+<li>注入了存储服务以调度动作并选择计数器的当前状态。</li>
+<li></li>
+</ul>
+<h3 id="通过actions-reducers和selectors了解ngrx应用程序的体系结构">通过actions、reducers和selectors了解NgRx应用程序的体系结构</h3>
+<h4 id="actios">Actios</h4>
+<p>Actions是NgRx中的主要构建块之一。 Actions表示在整个应用程序中发生的独特事件。 从用户与页面的交互，通过网络请求的外部交互以及与设备API的直接交互，这些以及更多事件均通过actions进行了描述。<br>
+NgRx中的Action由一个简单的接口组成：</p>
+<pre><code>// Action Interface
+interface Action {
+  type: string;
+}
+</code></pre>
+<p>接口具有单个属性，即类型，表示为字符串。 type属性用于描述将在您的应用程序中分派的操作。 该类型的值以[Source] Event的形式出现，用于提供有关它是什么actions类别以及从哪里调度动作的上下文。 您向actions添加属性以为操作提供其他上下文或元数据。<br>
+让我们看一下启动登录请求的示例Action:</p>
+<pre><code>// login-page.actions.ts
+import { createAction, props } from '@ngrx/store';
+
+export const login = createAction(
+  '[Login Page] Login',
+  props&lt;{ username: string; password: string }&gt;()
+);
+</code></pre>
+<p>createAction函数返回一个函数，该函数在被调用时将以Action接口的形式返回一个对象。 props方法用于定义处理动作所需的任何其他元数据。<br>
+Action创建者提供了一种一致的，类型安全的方式来构造要分派的Action。<br>
+使用Action创建者在分派时返回Action。</p>
+<pre><code>// login-page.component.ts
+onSubmit(username: string, password: string) {
+  store.dispatch(login({ username: username, password: password }));
+}
+</code></pre>
+<p>login Action创建者将收到一个用户名和密码的对象，并返回一个普通的JavaScript对象，其类型属性为[Login Page] Login，并将用户名和密码作为附加属性。<br>
+返回的Action具有非常具体的上下文，关于操作来自何处以及发生了什么事件:</p>
+<ul>
+<li>操作的类别捕获在方括号[]中,该类别用于对特定区域的操作进行分组，无论是组件页面，后端API还是浏览器API。</li>
+<li>类别后的登录文本是有关此操作发生了什么事件的描述。在这种情况下，用户单击登录页面上的登录按钮以尝试使用用户名和密码进行身份验证。</li>
+</ul>
+<h4 id="reducers">Reducers</h4>
+<p>NgRx中的reducer负责处理应用程序中从一个状态到下一个状态的转换。 Reducer纯函数通过根据操作的类型确定要处理的操作来处理这些转换。<br>
+由Reducer管理的每个状态都有一些一致的部分：</p>
+<p>定义state形状的接口或类型<br>
+参数包括初始状态或当前状态以及当前操作<br>
+处理state更改的功能及其相关</p>
+<p>以下是一组处理记分板state的操作示例以及相关的reducer功能:<br>
+首先，定义一些与state交互的action。</p>
+<pre><code>// scoreboard-page.actions.ts
+import { createAction, props } from '@ngrx/store';
+
+export const homeScore = createAction('[Scoreboard Page] Home Score');
+export const awayScore = createAction('[Scoreboard Page] Away Score');
+export const resetScore = createAction('[Scoreboard Page] Score Reset');
+export const setScores = createAction('[Scoreboard Page] Set Scores', props&lt;{game: Game}&gt;());
+</code></pre>
+<p>接下来，创建一个reducer文件，该文件导入action并为state块定义形状。</p>
+<h5 id="1-定义state形状">1、定义state形状</h5>
+<p>每个reducer函数都是一个action监听器。上面定义的记分板action描述了reducer可能处理的过渡。导入多组操作以处理reducer中的其他状态转换。</p>
+<pre><code>// scoreboard.reducer.ts
+import { Action, createReducer, on } from '@ngrx/store';
+import * as ScoreboardPageActions from '../actions/scoreboard-page.actions';
+
+export interface State {
+  home: number;
+  away: number;
+}
+</code></pre>
+<h5 id="2设置初始state值">2.设置初始state值</h5>
+<p>初始状态为状态提供一个初始值，如果当前状态未定义，则提供一个值。 您将默认状态设置为所需状态属性的初始状态。</p>
+<p>创建并导出变量以捕获具有一个或多个默认值的初始状态。</p>
+<pre><code>// scoreboard.reducer.ts
+export const initialState: State = {
+  home: 0,
+  away: 0,
+};
+</code></pre>
+<h5 id="3创建recucer函数">3.创建recucer函数</h5>
+<p>reducer功能的职责是以不变的方式处理状态转换。创建一个reducer函数，该函数处理使用createReducer函数管理计分板state的action。</p>
+<pre><code>const scoreboardReducer = createReducer(
+  initialState,
+  on(ScoreboardPageActions.homeScore, state =&gt; ({ ...state, home: state.home + 1 })),
+  on(ScoreboardPageActions.awayScore, state =&gt; ({ ...state, away: state.away + 1 })),
+  on(ScoreboardPageActions.resetScore, state =&gt; ({ home: 0, away: 0 })),
+  on(ScoreboardPageActions.setScores, (state, { game }) =&gt; ({ home: game.home, away: game.away }))
+);
+
+export function reducer(state: State | undefined, action: Action) {
+  return scoreboardReducer(state, action);
+}
+</code></pre>
+<p>导出的reducer函数是必需的，因为AOT编译器不支持函数调用。</p>
+<h5 id="4-注册root-state">4、注册root state</h5>
+<p>应用程序的state被定义为一个大对象。注册reducer函数以管理部分state时，只会在对象中定义具有关联值的键。要在您的应用程序中注册全局store，请使用StoreModule.forRoot（）方法以及定义您的state的键/值对的映射。 StoreModule.forRoot（）注册应用程序的全局提供程序，包括您注入到组件和服务中的Store服务，以分派操作并选择状态</p>
+<pre><code>// app.module.ts
+
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({ game: fromScoreboard.reducer })
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>使用StoreModule.forRoot（）注册state可确保在应用程序启动时定义state。通常，您注册的root state始终需要立即对应用程序的所有区域可用。</p>
+<h5 id="6注册功能state">6.注册功能state</h5>
+<p>功能state的行为与root state相同，但是允许您在应用程序中使用特定功能区域定义它们。 您的root state是一个大对象，而功能state会在该对象中注册其他键和值。</p>
+<p>让我们从一个空的state对象开始。</p>
+<pre><code>import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({})
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>这会将您的应用程序注册为root state为空的对象。</p>
+<pre><code>{}
+</code></pre>
+<p>现在，将记分板reducer与名为ScoreboardModule的NgModule功能一起使用，以注册其他state</p>
+<pre><code>// scoreboard.reducer.ts
+export const scoreboardFeatureKey = 'game';
+
+
+// scoreboard.module.ts
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forFeature(fromScoreboard.scoreboardFeatureKey, fromScoreboard.reducer)
+  ],
+})
+export class ScoreboardModule {}
+</code></pre>
+<p>将ScoreboardModule添加到AppModule以加载state。</p>
+<pre><code>// app.module.ts
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { ScoreboardModule } from './scoreboard/scoreboard.module';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({}),
+    ScoreboardModule
+  ],
+})
+export class AppModule {}
+</code></pre>
+<p>一旦记分板模块被加载，game键就成为root state对象中的一个属性，并且现在处于state中进行管理</p>
+<pre><code>{
+  game: { home: 0, away: 0 }
+}
+</code></pre>
+<p>立即加载state还是延迟加载state取决于应用程序的需求。您可以使用功能state随着时间推移并通过不同的功能模块来构建state对象。</p>
+<h4 id="selectors">Selectors</h4>
+<p>Selectors是用于获取存储state切片的纯函数。 @ ngrx / store提供了一些帮助程序功能来优化此选择。选择state切片时，选择器提供许多功能:<br>
+可移植性 记忆化 组成 可测性 类型安全。<br>
+使用createSelector和createFeatureSelector函数时，@ ngrx / store会跟踪调用选择器函数的最新参数。 因为选择器是纯函数，所以当参数匹配时可以返回最后的结果，而无需重新调用选择器函数。 这可以提供性能优势，尤其是对于执行昂贵计算的选择器而言。 这种做法称为记忆。<br>
+对一个state使用选择器：</p>
+<pre><code>import { createSelector } from '@ngrx/store';
+
+export interface FeatureState {
+  counter: number;
+}
+
+export interface AppState {
+  feature: FeatureState;
+}
+
+export const selectFeature = (state: AppState) =&gt; state.feature;
+
+export const selectFeatureCount = createSelector(
+  selectFeature,
+  (state: FeatureState) =&gt; state.counter
+);
+</code></pre>
+<p>对多个状态使用选择器:<br>
+createSelector可用于基于同一状态的多个切片从状态中选择一些数据。<br>
+createSelector函数最多可以使用8个选择器函数，以进行更完整的状态选择。<br>
+例如，假设您在状态中有一个selectedUser对象。 您还具有book对象的allBooks数组。<br>
+您想显示当前用户的所有书籍。<br>
+您可以使用createSelector来实现。 即使您在allBooks中对其进行了更新，您的可见图书也将始终是最新的。 如果选择了一本，它们将始终显示属于您用户的图书，而当未选择任何用户时，它们将显示所有图书。<br>
+结果将只是状态的另一部分过滤掉您的某些状态。 而且它将永远是最新的。</p>
+<pre><code>import { createSelector } from '@ngrx/store';
+
+export interface User {
+  id: number;
+  name: string;
+}
+
+export interface Book {
+  id: number;
+  userId: number;
+  name: string;
+}
+
+export interface AppState {
+  selectedUser: User;
+  allBooks: Book[];
+}
+
+export const selectUser = (state: AppState) =&gt; state.selectedUser;
+export const selectAllBooks = (state: AppState) =&gt; state.allBooks;
+
+export const selectVisibleBooks = createSelector(
+  selectUser,
+  selectAllBooks,
+  (selectedUser: User, allBooks: Book[]) =&gt; {
+    if (selectedUser &amp;&amp; allBooks) {
+      return allBooks.filter((book: Book) =&gt; book.userId === selectedUser.id);
+    } else {
+      return allBooks;
+    }
+  }
+);
+</code></pre>
+<p>将选择器与props一起使用:<br>
+要根据store中不可用的数据选择state，可以将props传递给选择器功能。 这些props通过每个选择器和投影仪功能传递。 为此，我们必须在组件内部使用选择器时指定这些props。<br>
+例如，如果我们有一个计数器，并且想将其值相乘，则可以将相乘因子添加为prop：<br>
+选择器或投影仪的最后一个参数是props参数，在我们的示例中，它看起来如下:</p>
+<pre><code>export const getCount = createSelector(
+  getCounterValue,
+  (counter, props) =&gt; counter * props.multiply
+);
+</code></pre>
+<p>在组件内部，我们可以定义props：</p>
+<pre><code>ngOnInit() {
+  this.counter = this.store.pipe(select(fromRoot.getCount, { multiply: 2 }))
+}
+</code></pre>
+<p>以下是使用以ID区分的多个计数器的示例。</p>
+<pre><code>export const getCount = () =&gt;
+  createSelector(
+    (state, props) =&gt; state.counter[props.id],
+    (counter, props) =&gt; counter * props.multiply
+  );
+</code></pre>
+<p>组件的选择器现在正在调用工厂函数来创建不同的选择器实例：</p>
+<pre><code>ngOnInit() {
+  this.counter2 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter2', multiply: 2 }));
+  this.counter4 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter4', multiply: 4 }));
+  this.counter6 = this.store.pipe(select(fromRoot.getCount(), { id: 'counter6', multiply: 6 }));
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Charles安装及代理配置]]></title>
+        <id>https://fanguyun.github.io/post/charles-an-zhuang-ji-dai-li-pei-zhi/</id>
+        <link href="https://fanguyun.github.io/post/charles-an-zhuang-ji-dai-li-pei-zhi/">
+        </link>
+        <updated>2020-05-21T02:34:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>Charles是一款用于HTTP信息抓包工具，可以快速有效的获得HTTP信息，非常利于开发者的网页开发和调试修改等。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Charles是一款用于HTTP信息抓包工具，可以快速有效的获得HTTP信息，非常利于开发者的网页开发和调试修改等。</p>
+<!-- more -->
+<h3 id="1-安装">1、安装</h3>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.charlesproxy.com/download/">官网下载</a></li>
+</ul>
+<p>菜单栏【Charles → help → Registered to】,输入账号和key激活使用授权码生成访问 https://www.charles.ren/</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/21/cYQSWsqdr1gCPZb.png" alt="image2020-5-20 16_35_35" loading="lazy"></figure>
+<h3 id="2-charles客户端配置">2. Charles客户端配置</h3>
+<p>安装好Charles后，在菜单栏勾选【Proxy -&gt; macOS Proxy】，macOS系统HTTP/HTTPS代理将会被自动设置为本地代理，默认端口8888。</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/05/21/53Ntlp9ofFE8Cbd.png" alt="image2020-5-20 15_40_39" loading="lazy"></figure>
+<h3 id="3-抓取https">3、抓取HTTPS</h3>
+<p>在菜单栏选择 【Help -&gt; SSL Proxying -&gt; Install Charles Root Certificate】，会自动导入 Charles Proxy CA 证书并打开 Keychain Access</p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/05/21/hDaItHmoKVnQvAF.png" alt="image2020-5-20 15_43_5" loading="lazy"></figure>
+<p>双击新导入的证书弹出证书信息页面，将 Secure Sockets Layer(SSL) 设置为Always Trust（始终信任），关闭页面后弹出密码提示，输入密码更新系统信任设置</p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2020/05/21/Ze2ECWrqxHlTBuv.png" alt="image2020-5-20 15_45_5" loading="lazy"></figure>
+<p>在菜单栏选择 【Proxy -&gt; SSL Proxy Settings】，在SSL Proxying选项卡中可以添加需要抓包的域名端口</p>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2020/05/21/NCnZWAML4zmdrPc.png" alt="image2020-5-20 15_46_46" loading="lazy"></figure>
+<h3 id="4-移动端代理配置">4、移动端代理配置</h3>
+<p>MAC开启Charles，确保移动端和PC端处于同一局域网</p>
+<p>Mac局域网地址可以在Charles中从菜单栏【Help -&gt; Local IP Address】获取</p>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2020/05/21/toAP1QLURwTl8S4.png" alt="image2020-5-20 15_53_8" loading="lazy"></figure>
+<p>设置iOS HTTP代理，打开iOS设备对应WIFI设置，添加代理IP地址（Mac的局域网地址）和端口号（8888）</p>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2020/05/21/v1LX6FaNASwzfnk.png" alt="image2020-5-20 15_55_59" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://i.loli.net/2020/05/21/eKm6nEFt1jdiVaC.png" alt="image2020-5-20 15_56_31" loading="lazy"></figure>
+<p>在i移动设备上访问数据链接，Charles 弹出 Access Control 确认对话框，选择Allow，可以开始抓取HTTP包。</p>
+<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2020/05/21/XcAFquGh2Zv9tpO.png" alt="image2020-5-20 16_37_30" loading="lazy"></figure>
+<h3 id="4-移动端https代理">4、移动端HTTPS代理</h3>
+<p>在菜单栏选择 【Help -&gt; SSL Proxying -&gt; Install Charles Root Certificate on a Mobile Device or a Remote Browser】，弹出提示框。</p>
+<figure data-type="image" tabindex="10"><img src="https://i.loli.net/2020/05/21/VD5ItkNs6PqmB84.png" alt="image2020-5-20 16_0_23" loading="lazy"></figure>
+<p>根据上述提示，在移动端访问<a href="https://link.zhihu.com/?target=http%3A//chls.pro/ssl">//chls.pro/ssl </a>，下载证书并提示安装，根据提示一步一步安装好</p>
+<h4 id="41-ios设备">4.1、IOS设备</h4>
+<p>证书会被添加到【设置 -&gt; 通用 -&gt; 描述文件】中。</p>
+<figure data-type="image" tabindex="11"><img src="https://i.loli.net/2020/05/21/OxbCkKfRJUzd4G5.png" alt="image2020-5-20 16_38_3" loading="lazy"></figure>
+<p>进入【设置 -&gt; 通用 -&gt; 关于本机 -&gt; 证书信任设置】，对上一步安装的Charles证书启用完全信任</p>
+<figure data-type="image" tabindex="12"><img src="https://i.loli.net/2020/05/21/w9OBpJFb4XZDhsm.png" alt="image2020-5-20 16_38_35" loading="lazy"></figure>
+<p>在iOS设备上访问HTTPS数据链接，可以开始抓取HTTPS包</p>
+<h4 id="42-安卓设备">4.2、安卓设备</h4>
+<p>同上，浏览器打开下载证书地址</p>
+<figure data-type="image" tabindex="13"><img src="https://i.loli.net/2020/05/21/JWLwx8Nd2RfOzov.png" alt="image2020-5-20 16_39_6" loading="lazy"></figure>
+<p>证书下载成功后，查看已下载的证书，选择证书安装，输入证书名称，证书命名可随意填写，确定后安装成功。</p>
+<p>安卓不同设备安装会有所差异。</p>
+<h3 id="6-其他工具">6、其他工具</h3>
+<ul>
+<li><a href="https://blog.csdn.net/qq_37711581/article/details/81779825">Fiddler 请求转发</a></li>
+<li><a href="https://juejin.im/post/5c1b39f6e51d4502a232ca8c">Fiddler Https证书安装</a></li>
+<li>whistle：<a href="http://wproxy.org/">web 项目调试</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端跨平台调试]]></title>
+        <id>https://fanguyun.github.io/post/qian-duan-kua-ping-tai-diao-shi/</id>
+        <link href="https://fanguyun.github.io/post/qian-duan-kua-ping-tai-diao-shi/">
+        </link>
+        <updated>2020-04-27T06:18:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>如何调试移动端页面一直是比较头疼的事。与桌面浏览器不同，当H5页面嵌入到app后，无法很方便地按出F12来查看元素，或者断点调试js。另外，移动端设备差异化非常严重，iphone 6 到 iphone 11，android 更是不用多说。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>如何调试移动端页面一直是比较头疼的事。与桌面浏览器不同，当H5页面嵌入到app后，无法很方便地按出F12来查看元素，或者断点调试js。另外，移动端设备差异化非常严重，iphone 6 到 iphone 11，android 更是不用多说。</p>
+<!-- more -->
+<h3 id="移动端调试痛点">移动端调试痛点</h3>
+<p>设备差异、环境差异、系统差异。PC端浏览器开发者工具，VS Debug。移动端，我的手机是好的，测试小姐姐说她的手机有bug。微信微博等第三方环境，怎么调试？</p>
+<h3 id="常用调试方法">常用调试方法</h3>
+<h4 id="charlesfiddler">Charles/Fiddler</h4>
+<p>抓包工具，可以截取包括 <code>https</code> 在内的各种网络请求并方便的查看具体信息。通过配置 <code>WIFI</code> 代理，也可以拦截手机发出的请求，在一定程度上帮助 <code>debug</code>。软件付费，而且它定位不了 <code>js</code> 的报错，所以只能作为一个辅助工具。</p>
+<h4 id="android-chrome浏览器">Android + Chrome浏览器</h4>
+<p>第一步：打开 <code>Android</code> 手机 <code>设置</code> &gt; <code>开发者选项</code> &gt; <code>USB调试</code>。</p>
+<p>第二步：通过数据线连接你的电脑和 <code>Android</code> 手机，允许USB调试。</p>
+<p>第三步：Android<code>手机下载一个手机版的</code>Chrome浏览器，并在手机上的 <code>Chrome浏览器</code> 中打开你需要调试的页面。</p>
+<p>第四步：打开电脑上的 <code>Chrome浏览器</code>，输入<a href="chrome://inspect/#devices">chrome://inspect/#devices</a></p>
+<h4 id="maciossafari">Mac+IOS+Safari</h4>
+<p>第一步：打开苹果手机 <code>设置</code> &gt; <code>Safari浏览器</code> &gt; <code>高级</code> &gt; <code>Web检查器</code></p>
+<p>第二步： 打开 <code>Mac</code> 上的 <code>Safari浏览器</code> &gt; <code>偏好设置</code> &gt; <code>高级</code> &gt; <code>在菜单栏中显示“开发”菜单</code></p>
+<p>第三步： 用数据线连接你的 <code>Mac</code> 电脑和苹果手机，并选择信任设备。然后在手机的 <code>Safari浏览器</code> 中打开你需要调试的页面，然后在电脑Safari中打开调试页面，菜单 &gt; 开发 &gt;  设备名。选择打开的页面。</p>
+<h4 id="vconsole"><a href="https://github.com/Tencent/vConsole">vConsole</a></h4>
+<p>腾讯出品的 Web 调试面板。<code>vConsole</code> 会在你网页中加一个悬浮的小按钮，可以点击它来打开关闭调试面板，并查看 <code>DOM</code>、<code>Console</code>、<code>Network</code>和 <code>本地存储</code> 等信息。基本可以满足普通前端开发的需求。使用方法也很简单，通过<code>npm</code>安装或者直接在需要的页面引入 <code>js文件</code> ，然后 <code>new VConsole()</code> 就可以了。</p>
+<h4 id="eruda"><a href="https://github.com/liriliri/eruda">Eruda</a></h4>
+<p>Eruda 是一个专为手机网页前端设计的调试面板，类似 DevTools 的迷你版，其主要功能包括：捕获 console 日志、检查元素状态、捕获XHR请求、显示本地存储和 Cookie 信息等等。</p>
+<h4 id="weiner"><a href="https://github.com/tvganesh/weiner">weiner</a></h4>
+<p>weinre是一款很不错的网页检查工具，可以通过在本地启动一个 <code>weinre</code> 服务，并向手机网页嵌入一段 <code>js</code> 脚本来实现和电脑的通信，已达到类似浏览器开发工具那样的的调试效果，它的操作界面和 <code>vConsole</code> 差不多，主要包括查看 <code>DOM</code>、<code>Console</code>、<code>Network</code> 等，只不过这一切是在电脑上操作，而不是在手机上。</p>
+<h3 id="常见调试场景">常见调试场景</h3>
+<ol>
+<li>
+<p>本地开发host映射，如微信，微博授权，支付域名固定</p>
+</li>
+<li>
+<p>独立H5页面真机调试</p>
+</li>
+<li>
+<p>嵌入第三方调试</p>
+</li>
+<li>
+<p>特定第三方环境调试</p>
+</li>
+<li>
+<p>线上环境调试</p>
+</li>
+</ol>
+<h3 id="调试工具推荐">调试工具推荐</h3>
+<p>whistle是基于Node实现的跨平台web调试代理工具，主要用于查看、修改HTTP、HTTPS、Websocket的请求/响应，也可以作为HTTP代理服务器使用，whistle采用的是类似配置系统hosts的方式，一切操作都可以通过配置实现，支持域名、路径、正则表达式、通配符、通配路径等多种匹配方式，且可以通过Node模块扩展功能。</p>
+<p>官方文档：<a href="http://wproxy.org/whistle/">wproxy.org/whistle/</a></p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/27/bYWUTVt5Zdv9ceS.png" alt="基本功能" loading="lazy"></figure>
+<h4 id="安装使用">安装使用</h4>
+<ul>
+<li>
+<p>安装</p>
+<pre><code class="language-sh">npm install -g whistle
+</code></pre>
+</li>
+<li>
+<p>命令</p>
+<pre><code>w2 help
+
+  Usage: whistle &lt;command&gt; [options]
+
+  Commands:
+
+  status              Show the running status of whistle
+  use/add [filepath]  Set rules from a specified js file (.whistle.js by default)
+  run                 Start a front service
+  start               Start a background service
+  stop                Stop current background service
+  restart             Restart current background service
+  help                Display help information
+</code></pre>
+</li>
+<li>
+<p>使用</p>
+<pre><code>// 启动
+w2 start
+// 重启
+w2 stop
+// 停止 
+w2 stop
+</code></pre>
+</li>
+<li>
+<p>设置代理</p>
+<p>1、全局代理</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/27/aDqFRKvEsuLzfxn.jpg" alt="img" loading="lazy"></figure>
+<p>2、浏览器代理</p>
+<p>安装浏览器插件，如Chrome： <a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif">SwitchyOmega</a></p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/04/27/2SLrqlR49Dd3AnO.jpg" alt="img" loading="lazy"></figure>
+<p>3、移动端设置代理</p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2020/04/27/S2YI1ZBipPG3hLe.jpg" alt="img" loading="lazy"></figure>
+</li>
+<li>
+<p>访问配置页面</p>
+<ul>
+<li>
+<p>方式1：域名访问 http://local.whistlejs.com/</p>
+</li>
+<li>
+<p>方式2：通过ip+端口来访问，形式如 <code>http://whistleServerIP:whistlePort/</code> e.g. <a href="http://127.0.0.1:8899/">http://127.0.0.1:8899</a></p>
+</li>
+<li>
+<p>方式2：通过命令行参数 <code>-P xxxx</code> 自定义webui的端口(<code>xxxx</code>表示要设置的端口号)，自定义端口支持上述两种方</p>
+<p>式访问，也支持 <a href="http://127.0.0.1:xxxx/">http://127.0.0.1:xxxx</a></p>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2020/04/27/lNmHR2aipqYOx4e.png" alt="image-20200427121814079" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2020/04/27/WAZ7qxDLtdHKaVy.png" alt="image-20200427121855918" loading="lazy"></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>注入文件配置</p>
+<pre><code>w2 add [filepath]
+</code></pre>
+</li>
+</ul>
+<h5 id="常用功能">常用功能</h5>
+<ul>
+<li>
+<p>Host映射</p>
+<pre><code># host映射
+192.168.0.107 http://checkout.m.xiaodianpu.com
+192.168.0.107 http://oauth2.m.xiaodianpu.com
+192.168.0.107 http://shop12345678.m.xiaodianpu.com
+127.0.0.1 http://shop.m.xiaodianpu.com    # 直接的host配置
+192.168.0.107:8081 one.test.com two.test.com         # 对全部域名路径替换host
+192.168.0.107 three.com/ads                # 对特定的路径替换host
+</code></pre>
+</li>
+<li>
+<p>请求转发</p>
+<pre><code># 请求转发
+shop02604127.m.xiaodianpu.com https://shop02604127.m.xiaodianpu.com
+oauth2.m.xiaodianpu.com https://oauth2.m.xiaodianpu.com
+checkout.m.xiaodianpu.com https://checkout.m.xiaodianpu.com
+**.m.xiaodianpu.com https://shop02604127.m.xiaodianpu.com  # 所有子域名转发生效
+</code></pre>
+</li>
+<li>
+<p>调试远程页面</p>
+<pre><code>https://shop02604127.m.xiaodianpu.com weinre://test
+</code></pre>
+</li>
+<li>
+<p>开启Eruda，插件形式注入</p>
+<pre><code># 开启eruda
+shop12345678.m.xiaodianpu.com whistle.inspect://e
+checkout.m.xiaodianpu.com whistle.inspect://e
+</code></pre>
+</li>
+<li>
+<p>开启Vconsole, 插件形式注入</p>
+<pre><code># 开启eruda
+shop12345678.m.xiaodianpu.com whistle.inspect://e
+checkout.m.xiaodianpu.com whistle.inspect://e
+</code></pre>
+</li>
+<li>
+<p>数据Mock</p>
+<p>基于<a href="https://github.com/nuysoft/Mock">Mock.js</a></p>
+<pre><code>	
+http://mock.local/data.json vase://mock_json_demo
+</code></pre>
+</li>
+<li>
+<p>开启跨域</p>
+<pre><code># 开启跨域
+test.com file://{createData.json}
+</code></pre>
+</li>
+<li>
+<p>脚本注入</p>
+<pre><code># 脚本注入
+test.com html://Users/fan/xdp-webapp/whistle/debug.html
+shop02604127.m.xiaodianpu.com js://Users/fan/xdp-webapp/whistle/debug.js
+test.com css://Users/fan/xdp-webapp/whistle/debug.css
+
+</code></pre>
+</li>
+<li>
+<p>重定向</p>
+<pre><code># 重定向
+https://www.baidu.com/ redirect://https://m.xiaodianpu.com
+
+</code></pre>
+</li>
+<li>
+<p>替换线上文件</p>
+<pre><code>static.seecsee.com/ufs/webapp/3de34c68/main-es2015.ce5beedbe4b13d68c4ab.js file:///Users/fan/xdp-webapp/dist/apps/webapp/browser/main.js
+</code></pre>
+</li>
+<li>
+<p>修改请求</p>
+<pre><code># 修改url参数
+www.qq.com urlParams://E:\test\params.json        
+ 
+# 请求方法
+www.qq.com method://post
+ 
+# 添加请求头
+www.qq.com reqHeaders://(x-a=1&amp;x-b=a%20b)
+ 
+# 修改referer(修改referer快捷方法)
+www.qq.com referer://http://ke.qq.com/
+ 
+# 修改cookie(修改请求cookie快捷方法)
+www.qq.com reqCookie://{reqCookie.json}
+ 
+# 修改请求表单
+www.qq.com params://{form.json}
+
+# 修改接口返回状态
+https://test.com/test statusCode://500
+</code></pre>
+</li>
+<li>
+<p>修改响应</p>
+<pre><code># 修改响应状态码
+www.qq.com statusCode://500 # 请求不会发送到后台服务器，可以用来模拟4xx、5xx请求
+www.qq.com replaceStatus://404 # 请求返回后再修改statusCode
+ 
+# 添加响应头
+www.qq.com resHeaders://(x-res-a=1&amp;x-res-b=a%20b)
+ 
+# 修改响应类型(修改响应类型的快捷方法)
+www.qq.com resType://text/plain # 或者： www.qq.com resType://text
+ 
+# 请求替换
+www.qq.com https://www.baidu.com
+ 
+# 本地替换(windows中目录分割符可以用`\`，也可以用`/`)
+www.qq.com file://E:\xxx # 等价于： file://E:/xxx www.qq.com
+# Mac或Linux
+www.qq.com file:///User/xxx/test
+# 如果要让本地没有对应文件的请求继续请求线上，可以采用
+www.qq.com xfile://E:\xxx
+ 
+# 本地替换jsonp
+www.qq.com tpl://E:\xxx.json # xxx.json: {callback}({&quot;ec&quot;: 0})
+www.qq.com xtpl://E:\xxx.json # xxx.json: {callback}({&quot;ec&quot;: 0})
+	
+# 说明：会把内容 append 到请求后面
+http://mydomain.com/style.css resAppend://{myAppend.css}
+# 说明：完全替换请求内容
+http://mydomain.com/style.css resBody://{myResBody.css}
+ 
+
+</code></pre>
+</li>
+<li>
+<p>启用或禁用一些配置</p>
+<pre><code># 拦截url里面有baidu的https请求
+/baidu/ enable://intercept
+
+# 拦截域名www.google.com下的所有https请求，且不在Network上显示
+www.google.com enable://intercept|hide
+
+# 禁用请求的缓存，只要经过代理且匹配到的请求都不会使用缓存
+# 跟 cache 协议的区别是，cache 只是用来设置响应的缓存头
+wwww.test.com disable://cache
+
+# 禁用请求和响应的cookie
+wwww.test.com disable://cookie # 也可以写成复数形式cookies
+
+# 只禁用请求的cookie
+wwww.test.com disable://reqCookie # 也可以写成复数形式reqCookies
+
+# 只禁用响应的cookie
+wwww.test.com disable://resCookie # 也可以写成复数形式reqCookies
+</code></pre>
+</li>
+</ul>
+<h3 id="更多">更多</h3>
+<p>whistle更多使用及插件开发请参考官方文档：<a href="http://wproxy.org/whistle/">wproxy.org/whistle/</a></p>
+<p>项目中具体的问题，根据场景，选择合适的工具方法，搭配使用！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[支付宝支付接入]]></title>
+        <id>https://fanguyun.github.io/post/zhi-fu-bao-zhi-fu-jie-ru/</id>
+        <link href="https://fanguyun.github.io/post/zhi-fu-bao-zhi-fu-jie-ru/">
+        </link>
+        <updated>2020-03-02T10:30:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>支付宝开放平台，致力于为开发者提供支付、理财、信用、口碑开店、安全、营销、社交等各类能力及行业解决方案。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>支付宝开放平台，致力于为开发者提供支付、理财、信用、口碑开店、安全、营销、社交等各类能力及行业解决方案。</p>
+<!-- more -->
+<h4 id="1-支付宝应用接入流程">1、支付宝应用接入流程</h4>
+<table>
+<thead>
+<tr>
+<th>流程</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1、创建应用</td>
+<td><a href="https://docs.open.alipay.com/200/105894/">应用介绍</a> <a href="https://docs.open.alipay.com/200/105310/">创建应用</a> 应用安全开发指南 设计规范</td>
+</tr>
+<tr>
+<td>2、开始开发</td>
+<td>了解产品 快速接入 更多帮助与支持</td>
+</tr>
+<tr>
+<td>3、上线使用</td>
+<td><a href="https://docs.open.alipay.com/200/golive/">上线应用</a> 使用应用 <a href="https://docs.open.alipay.com/200/105314/">签约功能</a> 发布到服务市场</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-应用简介">2、应用简介</h4>
+<p>通过创建应用的方式接入蚂蚁各项产品（如当面付、开店、发券、服务窗、余利宝等）接口并进行开发。<br>
+目前开放平台的应用按使用对象分为两类：自研型应用 和 第三方应用（商户服务型应用）:</p>
+<table>
+<thead>
+<tr>
+<th>应用类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自研型应用</td>
+<td>使用开放的功能，为自己或自己公司开发应用。自研型应用分为网页/移动，小程序，生活号。</td>
+</tr>
+<tr>
+<td>第三方应用</td>
+<td>适用于服务商，为商户开发应用，拓展商户使用</td>
+</tr>
+</tbody>
+</table>
+<p>如果您的应用为第三方应用（即供商家使用），则需要商家对该应用进行授权，详细步骤可以参考 <a href="https://docs.alipay.com/isv/10467/xldcyq">第三方应用授权</a>。</p>
+<pre><code>创建应用 -&gt; 应用配置 -&gt; 上线应用 -&gt; 签约功能（如手机网站支付，APP支付等）-&gt; 开发接入已签约功能
+</code></pre>
+<h5 id="-开发者使用支付宝账号登录开放平台需实名认证的支付宝账号根据实际需求创建应用如支付应用">- 开发者使用支付宝账号<a href="https://auth.alipay.com/login/index.htm?goto=https%3A%2F%2Fopenhome.alipay.com%2Fplatform%2FmanageApp.htm">登录开放平台</a>（需实名认证的支付宝账号），根据实际需求创建应用（如“支付应用”）。</h5>
+<p>输入名称，上传应用图标，选择应用功能（如手机网站支付，APP支付等），<a href="https://docs.open.alipay.com/291/105971">下载签名工具</a>生成生成商户应用私钥和商户应用公钥，回到开放平台的应用完善页面，点击设置应用公钥，接收验证码，输入上一步生成的商户应用公钥，点击确定。然后会生成对应的支付宝公钥，商户应用公钥和支付宝公钥要明确区分开。<br>
+<strong>开发代码中要使用到 支付宝公钥  和 商户应用私钥</strong><br>
+提交审核，一天之后，审核完成，显示应用上线。签约选择的应用功能，开始代码开发。</p>
+<h4 id="3-手机网站支付接入h5网站">3、<a href="https://docs.open.alipay.com/203/105288/">手机网站支付接入(H5网站)</a></h4>
+<h5 id="-31-业务场景">- 3.1、业务场景</h5>
+<p><strong>移动网页应用无需集成SDK也可以唤起支付宝客户端支付。</strong><br>
+在网页应用中调用支付宝提供的网页支付接口，接口会调起支付宝客户端内的支付模块，此时会从商家网页应用跳转到支付宝客户端中并开始支付；支付完成后会跳转回商家网页应用内，最后商家展示支付结果。</p>
+<h5 id="-32-接入条件">- 3.2、接入条件</h5>
+<ul>
+<li>申请前必须拥有经过实名认证的支付宝账户；</li>
+<li>企业或个体工商户可申请；</li>
+<li>需提供真实有效的营业执照，且支付宝账户名称需与营业执照主体一致；</li>
+<li>网站能正常访问且页面显示完整，网站需要明确经营内容且有完整的商品信息；</li>
+<li>网站必须通过ICP备案。如为个体工商户，网站备案主体需要与支付宝账户主体名称一致；</li>
+<li>如为个体工商户，则团购不开放，且古玩、珠宝等奢侈品、投资类行业无法申请本产品。</li>
+<li>费率按单笔计算；一般行业费率：0.6%；</li>
+<li>特殊行业费率：1.2%，特殊行业范围包括：手机、通讯设备销售；家用电器；数码产品及配件；休闲游戏；网络游戏点卡、渠道代理；游戏系统商；网游周边服务、交易平台；网游运营商（含网页游戏）</li>
+</ul>
+<h5 id="-33-开发前准备快速接入">- 3.3 <a href="https://docs.open.alipay.com/203/107084/">开发前准备</a>&amp;<a href="https://docs.open.alipay.com/203/105285/">快速接入</a></h5>
+<p>1、创建应用并获取APPID</p>
+<p>登录蚂蚁金服开放平台（<a href="open.alipay.com">open.alipay.com</a>），登记个人应用后，审核通过将会得到应用的唯一标识（APPID）。</p>
+<p>2、配置密钥</p>
+<p>开发者调用接口前需要先生成RSA密钥，RSA密钥包含应用私钥(APP_PRIVATE_KEY)、应用公钥(APP_PUBLIC_KEY）。</p>
+<p>详情见：<a href="https://docs.open.alipay.com/291/105971/">https://docs.open.alipay.com/291/105971/</a></p>
+<p>3、下载服务端SDK</p>
+<p>下载地址：<a href="https://docs.open.alipay.com/203/105910/">https://docs.open.alipay.com/203/105910/</a></p>
+<p>4、接口调用配置</p>
+<p>5、调用接口</p>
+<p>手机网站支付产品包含两类API：</p>
+<p>页面跳转类：需要从前端页面以Form表单的形式发起请求，浏览器会自动跳转至支付宝的相关页面（一般是收银台或签约页面），用户在该页面完成相关业务操作后再回跳到商户指定页面。例如本产品中的手机网站支付接口alipay.trade.wap.pay。</p>
+<p>系统调用类：直接从服务端发起HTTP请求，支付宝会同步返回请求结果。例如本产品中的交易查询等配套API。<br>
+<strong>接口调用流程</strong><br>
+<img src="https://fanguyun.github.io/post-images/1583145118760.png" alt="" loading="lazy"></p>
+<p>👋👋👋👋</p>
+<h5 id="-34-手机网站支付产品包含的接口和描述如下">- 3.4、手机网站支付产品包含的接口和描述如下：</h5>
+<table>
+<thead>
+<tr>
+<th>接口名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alipay.trade.wap.pay 手机网页支付接口</td>
+<td>通过此接口传入订单参数，同时唤起支付宝手机网页支付页面</td>
+</tr>
+<tr>
+<td>alipay.trade.close 交易关闭接口</td>
+<td>通过此接口关闭此前已创建的交易，关闭后，用户将无法继续付款。仅能关闭创建后未支付的交易。</td>
+</tr>
+<tr>
+<td>alipay.trade.query 交易状态查询接口</td>
+<td>通过此接口查询某笔交易的状态，交易状态：交易创建，等待买家付款；未付款交易超时关闭，或支付完成后全额退款；交易支付成功；交易结束，不可退款。</td>
+</tr>
+<tr>
+<td>alipay.trade.refund 交易退款接口</td>
+<td>通过此接口对单笔交易完成退款操作</td>
+</tr>
+<tr>
+<td>alipay.trade.fastpay.refund.query 退款查询</td>
+<td>查询退款订单的状态</td>
+</tr>
+<tr>
+<td>alipay.data.dataservice.bill.downloadurl.query 账单查询接口</td>
+<td>调用此接口获取账单的下载链接</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://docs.open.alipay.com/api_1/alipay.trade.wap.pay/">手机网页支付接口详细API</a></p>
+<h4 id="4-如何使用沙箱环境做开发调试">4、如何使用沙箱环境做开发调试</h4>
+<p>沙箱环境是开放平台提供给开发者调试接口的环境，具体操作步骤见<a href="https://docs.open.alipay.com/200/105311">沙箱接入指南</a>。<br>
+目前支付宝沙箱环境支持手机网站支付，并且在安装了沙箱支付宝钱包后，可以唤起沙箱支付宝钱包进行支付。<br>
+在没有应用或者应用还未上线及未签约支付功能时，可使用沙箱环境做开发联调，联调完成后，切换回商家应用APPid，商家私钥，商家公钥，支付宝公钥，做线上真实逻辑测试。</p>
+<pre><code>下载支付宝开放平台助手 -&gt; 生成RSA商家应用私钥、公钥 -&gt; 沙箱环境配置生成的应用公钥获取到支付宝公钥 -&gt; AliPAySdk配置秘钥 -&gt; 安装沙箱环境支付宝APP -&gt; 客户端网页调用支付接口 -&gt; 拉起沙箱环境支付宝APP -&gt; 完成支付
+</code></pre>
+<h4 id="5-其他">5、其他</h4>
+<ul>
+<li><a href="https://developers.alipay.com/developmentAccess/developmentAccess.htm">支付宝开发者中心</a></li>
+<li><a href="https://docs.open.alipay.com/203/105288/">手机网站支付文档</a></li>
+<li><a href="https://openhome.alipay.com/platform/appDaily.htm?tab=info">沙箱应用</a></li>
+<li><a href="https://docs.open.alipay.com/54/103419">服务端 SDK</a></li>
+<li><a href="https://docs.open.alipay.com/291/105971">RSA 秘钥</a></li>
+<li><a href="https://docs.open.alipay.com/api_1/alipay.trade.wap.pay">支付接口 API</a></li>
+<li><a href="https://docs.open.alipay.com/200/ug05sr/">账户成员管理</a></li>
+<li><a href="https://docs.open.alipay.com/291/105971">支付宝开放平台开发助手</a></li>
+</ul>
+<h4 id="基于alipaysdk的沙箱环境支付demo">基于AliPaySDK的沙箱环境支付DEMO:</h4>
+<p>Demo Repo: <a href="https://github.com/fanguyun214/alipay-node-demo">https://github.com/fanguyun214/alipay-node-demo</a><br>
+扫码体验（微信环境不能拉起支付宝）：<br>
+<img src="https://fanguyun.github.io/post-images/1583893453400.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>
