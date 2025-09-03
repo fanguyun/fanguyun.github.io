@@ -1,0 +1,720 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title> 现代软件技术栈详解 | Jonfan Blog</title>
+
+<link rel="shortcut icon" href="https://fanguyun.github.io/favicon.ico?v=1756882027206">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fanguyun.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DD6BSW9VD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-DD6BSW9VD');
+</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Jonfan Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1756882027206"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                     现代软件技术栈详解
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2025-09-03 ·
+                    </time>
+                    
+                        <a href="https://fanguyun.github.io/tag/m0Al-Dro1J/" class="post-tags">
+                            # 软件
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/00p3Ouggls3/" class="post-tags">
+                            # 技术栈
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/qauimayxpnx/" class="post-tags">
+                            # WEB
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="一-uiux表现层">一、UI/UX，表现层</h2>
+<ul>
+<li>
+<p><strong>React</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="100" height="100" alt="React"/></li>
+<li><strong>简要介绍</strong>：由Facebook推出的JavaScript库，用于构建用户界面，采用组件化开发模式。</li>
+<li><strong>使用场景</strong>：适用于构建大型单页应用（SPA），如Facebook、Instagram等复杂前端交互场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Angular</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="100" height="100" alt="Angular"/></li>
+<li><strong>简要介绍</strong>：Google开发的前端框架，基于TypeScript，提供完整的MVC架构。</li>
+<li><strong>使用场景</strong>：常用于企业级应用开发，如大型管理系统、电商平台等，需要强大的架构支持的场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Vue.js</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="100" height="100" alt="Vue.js"/></li>
+<li><strong>简要介绍</strong>：渐进式JavaScript框架，易于上手，灵活且轻量。</li>
+<li><strong>使用场景</strong>：适合各类Web应用开发，从简单的个人项目到复杂的企业应用都可，如小型工具类网站、移动端Web应用等。</li>
+</ul>
+</li>
+<li>
+<p><strong>Flutter</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://storage.googleapis.com/cms-storage-bucket/772838f8701cfcc59763.png" width="100" height="100" alt="Flutter"/></li>
+<li><strong>简要介绍</strong>：Google的UI工具包，可通过一套代码构建多平台（iOS、Android、Web等）应用。</li>
+<li><strong>使用场景</strong>：跨平台应用开发，尤其适合需要同时开发多端应用且希望保持一致UI体验的项目。</li>
+</ul>
+</li>
+<li>
+<p><strong>Tailwind CSS</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" width="100" height="100" alt="Tailwind CSS"/></li>
+<li><strong>简要介绍</strong>：实用优先的CSS框架，通过原子类快速构建自定义界面。</li>
+<li><strong>使用场景</strong>：需要快速迭代、高度自定义UI的项目，如快速原型设计、个性化网站开发。</li>
+</ul>
+</li>
+<li>
+<p><strong>Swift</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Swift_logo.svg" width="100" height="100" alt="Swift"/></li>
+<li><strong>简要介绍</strong>：苹果公司开发的编程语言，用于构建iOS、macOS等苹果平台应用。</li>
+<li><strong>使用场景</strong>：iOS、macOS、watchOS、tvOS等苹果生态系统的应用开发。</li>
+</ul>
+</li>
+<li>
+<p><strong>Kotlin</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Logo.png" width="100" height="100" alt="Kotlin"/></li>
+<li><strong>简要介绍</strong>：静态类型编程语言，可用于Android应用开发，与Java可交互。</li>
+<li><strong>使用场景</strong>：Android应用开发，相比Java更简洁、安全，也可用于服务端开发等场景。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="二-边缘与交付层可选">二、边缘与交付层，可选</h2>
+<ul>
+<li>
+<p><strong>Cloudflare</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Cloudflare_Logo.svg" width="100" height="100" alt="Cloudflare"/></li>
+<li><strong>简要介绍</strong>：提供内容分发网络（CDN）、DDoS防护、域名解析等服务。</li>
+<li><strong>使用场景</strong>：网站加速、安全防护，尤其是高流量网站，需要抵御网络攻击并提升全球访问速度的场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Akamai</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Akamai_Technologies_logo.svg" width="100" height="100" alt="Akamai"/></li>
+<li><strong>简要介绍</strong>：全球知名的CDN服务提供商，提供内容交付、云安全等服务。</li>
+<li><strong>使用场景</strong>：大型企业、媒体公司等，需要高效交付大量内容（如视频、静态资源）的场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Fastly</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fastly_Logo.svg" width="100" height="100" alt="Fastly"/></li>
+<li><strong>简要介绍</strong>：实时内容交付网络，强调低延迟、高可靠性。</li>
+<li><strong>使用场景</strong>：对内容交付延迟要求极高的场景，如直播平台、实时互动应用等。</li>
+</ul>
+</li>
+<li>
+<p><strong>CloudFront</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://d1.awsstatic.com/Products/AmazonCloudFront/amazon-cloudfront.logo.77f0c0771798c789c0d912526c371c0c91c71825.png" width="100" height="100" alt="CloudFront"/></li>
+<li><strong>简要介绍</strong>：AWS提供的CDN服务，与AWS其他服务集成度高。</li>
+<li><strong>使用场景</strong>：使用AWS云服务的企业，需要将内容快速分发给全球用户的场景，如AWS上部署的Web应用加速。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="三-api集成层">三、API，集成层</h2>
+<ul>
+<li>
+<p><strong>Postman</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Postman_Pro_logo.svg" width="100" height="100" alt="Postman"/></li>
+<li><strong>简要介绍</strong>：API开发与测试工具，可用于设计、调试、测试API。</li>
+<li><strong>使用场景</strong>：API开发流程中的各个阶段，如API设计验证、接口测试等。</li>
+</ul>
+</li>
+<li>
+<p><strong>gRPC</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/98/GRPC_Logo.svg" width="100" height="100" alt="gRPC"/></li>
+<li><strong>简要介绍</strong>：高性能、开源的远程过程调用（RPC）框架，基于Protocol Buffers。</li>
+<li><strong>使用场景</strong>：微服务架构中，服务间高效通信的场景，尤其适合低延迟、高吞吐量的需求。</li>
+</ul>
+</li>
+<li>
+<p><strong>GraphQL</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/1/11/GraphQL_Logo.svg" width="100" height="100" alt="GraphQL"/></li>
+<li><strong>简要介绍</strong>：用于API的查询语言，允许客户端精确获取所需数据。</li>
+<li><strong>使用场景</strong>：前端与后端数据交互，需要灵活获取数据的场景，如移动应用、单页应用等。</li>
+</ul>
+</li>
+<li>
+<p><strong>WebSocket</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/WebSocket.svg" width="100" height="100" alt="WebSocket"/></li>
+<li><strong>简要介绍</strong>：在单个TCP连接上进行全双工通信的协议。</li>
+<li><strong>使用场景</strong>：实时通信应用，如在线聊天、实时游戏、股票行情实时推送等场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>API Gateway</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://d1.awsstatic.com/Products/AmazonAPIGateway/amazon-api-gateway.logo.97c81c4221b25d798c9520d811c7088866c71c79.png" width="100" height="100" alt="API Gateway"/></li>
+<li><strong>简要介绍</strong>：作为API的统一入口，提供路由、认证、限流等功能。</li>
+<li><strong>使用场景</strong>：微服务架构中，统一管理API，为外部客户端提供统一访问接口的场景。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="四-消息与异步处理层可选">四、消息与异步处理层，可选</h2>
+<ul>
+<li>
+<p><strong>Kafka</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Apache_Kafka_logo.svg" width="100" height="100" alt="Kafka"/></li>
+<li><strong>简要介绍</strong>：分布式流处理平台，用于高吞吐量的消息发布与订阅。</li>
+<li><strong>使用场景</strong>：大规模数据管道、日志收集、实时分析等场景，如电商平台的订单消息处理。</li>
+</ul>
+</li>
+<li>
+<p><strong>RabbitMQ</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/RabbitMQ_logo.svg" width="100" height="100" alt="RabbitMQ"/></li>
+<li><strong>简要介绍</strong>：开源的消息代理软件，实现了AMQP等协议。</li>
+<li><strong>使用场景</strong>：应用间的异步通信、解耦，如订单系统与库存系统的异步消息传递。</li>
+</ul>
+</li>
+<li>
+<p><strong>SQS</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://d1.awsstatic.com/Products/AmazonSQS/amazon-sqs.logo.7c8112d19698195200092d086c693171111061c2.png" width="100" height="100" alt="SQS"/></li>
+<li><strong>简要介绍</strong>：AWS提供的托管消息队列服务。</li>
+<li><strong>使用场景</strong>：AWS云环境下的应用解耦、异步任务处理，如处理图片上传后的异步缩略图生成。</li>
+</ul>
+</li>
+<li>
+<p><strong>Celery</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://docs.celeryq.dev/en/stable/_static/celery_logo.png" width="100" height="100" alt="Celery"/></li>
+<li><strong>简要介绍</strong>：分布式任务队列，用于处理异步任务。</li>
+<li><strong>使用场景</strong>：Python应用中的异步任务处理，如发送邮件、数据备份等耗时任务。</li>
+</ul>
+</li>
+<li>
+<p><strong>Sidekiq</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://sidekiq.org/assets/logo.png" width="100" height="100" alt="Sidekiq"/></li>
+<li><strong>简要介绍</strong>：用于Ruby应用的后台任务处理系统。</li>
+<li><strong>使用场景</strong>：Ruby on Rails应用中的异步任务处理，如处理用户注册后的欢迎邮件发送等。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="五-业务逻辑层">五、业务逻辑层</h2>
+<ul>
+<li>
+<p><strong>Spring</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" width="100" height="100" alt="Spring"/></li>
+<li><strong>简要介绍</strong>：Java生态中的企业级应用框架，提供依赖注入、AOP等功能。</li>
+<li><strong>使用场景</strong>：企业级Java应用开发，如金融系统、电商后端等复杂业务逻辑场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Laravel</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" width="100" height="100" alt="Laravel"/></li>
+<li><strong>简要介绍</strong>：PHP的Web应用框架，遵循MVC架构，提供丰富的功能组件。</li>
+<li><strong>使用场景</strong>：PHP Web应用开发，如内容管理系统、电商网站等。</li>
+</ul>
+</li>
+<li>
+<p><strong>Express.js</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width="100" height="100" alt="Express.js"/></li>
+<li><strong>简要介绍</strong>：基于Node.js的Web应用框架，简洁、灵活。</li>
+<li><strong>使用场景</strong>：Node.js环境下的Web应用开发，如RESTful API服务、小型Web应用等。</li>
+</ul>
+</li>
+<li>
+<p><strong>Django</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Django_Logo.svg" width="100" height="100" alt="Django"/></li>
+<li><strong>简要介绍</strong>：Python的Web框架，遵循MVC架构，强调快速开发和DRY（Don't Repeat Yourself）原则。</li>
+<li><strong>使用场景</strong>：Python Web应用开发，如内容管理系统、社交平台后端等。</li>
+</ul>
+</li>
+<li>
+<p><strong>.NET</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Microsoft_.NET_logo.svg" width="100" height="100" alt=".NET"/></li>
+<li><strong>简要介绍</strong>：微软的开发平台，支持多种语言，用于构建各类应用。</li>
+<li><strong>使用场景</strong>：Windows平台应用、企业级应用、云服务等开发，如企业内部管理系统、Azure云应用等。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="六-数据访问层">六、数据访问层</h2>
+<ul>
+<li>
+<p><strong>Redis</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Redis_Logo.svg" width="100" height="100" alt="Redis"/></li>
+<li><strong>简要介绍</strong>：开源的内存数据结构存储系统，可作数据库、缓存和消息代理。</li>
+<li><strong>使用场景</strong>：缓存热点数据（如电商商品信息）、会话存储、实时计数（如网站访问量）等场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Elasticsearch</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Elasticsearch_logo.svg" width="100" height="100" alt="Elasticsearch"/></li>
+<li><strong>简要介绍</strong>：分布式搜索和分析引擎，基于Lucene。</li>
+<li><strong>使用场景</strong>：全文搜索（如电商网站商品搜索）、日志分析、数据可视化等场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Hibernate</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Hibernate_logo.svg" width="100" height="100" alt="Hibernate"/></li>
+<li><strong>简要介绍</strong>：Java的对象关系映射（ORM）框架，简化数据库操作。</li>
+<li><strong>使用场景</strong>：Java应用中，需要将对象与关系型数据库表映射的场景，减少SQL编写工作量。</li>
+</ul>
+</li>
+<li>
+<p><strong>Sequelize</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://raw.githubusercontent.com/sequelize/website/main/src/images/sequelize.png" width="100" height="100" alt="Sequelize"/></li>
+<li><strong>简要介绍</strong>：Node.js的ORM框架，支持多种关系型数据库。</li>
+<li><strong>使用场景</strong>：Node.js应用中与关系型数据库（如MySQL、PostgreSQL）的交互，如Web应用的数据持久化。</li>
+</ul>
+</li>
+<li>
+<p><strong>SQLAlchemy</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://www.sqlalchemy.org/static/img/sqlalchemy-logo.png" width="100" height="100" alt="SQLAlchemy"/></li>
+<li><strong>简要介绍</strong>：Python的SQL工具包和ORM框架。</li>
+<li><strong>使用场景</strong>：Python应用中与数据库的交互，支持灵活的SQL操作和对象映射，适用于各类Python Web或数据处理应用。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="七-数据存储层">七、数据存储层</h2>
+<ul>
+<li>
+<p><strong>PostgreSQL</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width="100" height="100" alt="PostgreSQL"/></li>
+<li><strong>简要介绍</strong>：开源的关系型数据库管理系统，功能强大，支持复杂查询。</li>
+<li><strong>使用场景</strong>：需要复杂关系数据管理的场景，如金融系统、地理信息系统等。</li>
+</ul>
+</li>
+<li>
+<p><strong>MySQL</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/62/MySQL.svg" width="100" height="100" alt="MySQL"/></li>
+<li><strong>简要介绍</strong>：广泛使用的开源关系型数据库，性能稳定。</li>
+<li><strong>使用场景</strong>：各类Web应用的数据存储，如博客系统、小型电商平台等。</li>
+</ul>
+</li>
+<li>
+<p><strong>MongoDB</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" width="100" height="100" alt="MongoDB"/></li>
+<li><strong>简要介绍</strong>：开源的文档型NoSQL数据库，模式灵活。</li>
+<li><strong>使用场景</strong>：非结构化或半结构化数据存储，如社交应用的用户动态、日志数据等。</li>
+</ul>
+</li>
+<li>
+<p><strong>BigQuery</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Google_Cloud_BigQuery_logo.svg" width="100" height="100" alt="BigQuery"/></li>
+<li><strong>简要介绍</strong>：Google Cloud提供的无服务器数据仓库，用于大规模数据分析。</li>
+<li><strong>使用场景</strong>：海量数据的分析与挖掘，如企业级数据仓库、大数据分析项目。</li>
+</ul>
+</li>
+<li>
+<p><strong>Snowflake</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Snowflake_Logo.svg" width="100" height="100" alt="Snowflake"/></li>
+<li><strong>简要介绍</strong>：云原生的数据仓库平台，支持多租户、弹性扩展。</li>
+<li><strong>使用场景</strong>：企业级数据存储与分析，尤其适合多云环境下的数据整合与分析。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="八-分析与机器学习层可选">八、分析与机器学习层，可选</h2>
+<ul>
+<li>
+<p><strong>Spark</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" width="100" height="100" alt="Spark"/></li>
+<li><strong>简要介绍</strong>：快速、通用的大规模数据处理引擎，支持批处理、流处理等。</li>
+<li><strong>使用场景</strong>：大规模数据处理与分析，如日志数据处理、机器学习数据预处理等场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>PyTorch</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/PyTorch_logo_icon.svg" width="100" height="100" alt="PyTorch"/></li>
+<li><strong>简要介绍</strong>：开源的机器学习框架，以动态计算图和易用性著称。</li>
+<li><strong>使用场景</strong>：深度学习模型开发，如图像识别、自然语言处理等AI应用场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Databricks</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Databricks_Logo.svg" width="100" height="100" alt="Databricks"/></li>
+<li><strong>简要介绍</strong>：基于Spark的云平台，提供数据集成、数据湖、机器学习等服务。</li>
+<li><strong>使用场景</strong>：企业级大数据处理与AI开发，简化Spark等技术的使用流程。</li>
+</ul>
+</li>
+<li>
+<p><strong>Looker</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Looker_logo_2020.svg" width="100" height="100" alt="Looker"/></li>
+<li><strong>简要介绍</strong>：数据平台，用于数据探索、分析和可视化。</li>
+<li><strong>使用场景</strong>：企业数据的分析与可视化，帮助业务人员从数据中获取 insights，如销售数据报表、运营指标监控等。</li>
+</ul>
+</li>
+<li>
+<p><strong>TensorFlow</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/TensorFlow logo.svg" width="100" height="100" alt="TensorFlow"/></li>
+<li><strong>简要介绍</strong>：开源的机器学习框架，由Google开发，应用广泛。</li>
+<li><strong>使用场景</strong>：各类机器学习和深度学习应用，如图像识别、语音识别、推荐系统等。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="九-基础设施与云服务层可选">九、基础设施与云服务层，可选</h2>
+<ul>
+<li>
+<p><strong>AWS（Amazon Web Services）</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" width="100" height="100" alt="AWS"/></li>
+<li><strong>简要介绍</strong>：亚马逊提供的全面云服务平台，包括计算、存储、数据库、AI等众多服务。</li>
+<li><strong>使用场景</strong>：企业上云，构建弹性、可扩展的应用，如Web应用部署、大数据处理、灾备等场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>Azure</strong></p>
+<ul>
+<li><strong>图标</strong>：<img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Microsoft_Azure_Logo.svg" width="100" height="100" alt="Azure"/></li>
+<li><strong>简要介绍</strong>：微软的云平台，提供计算、AI、DevOps 等全套服务。</li>
+<li><strong>使用场景</strong>：企业级应用、混合云部署、Windows/.NET 生态深度集成。</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fanguyun.github.io/post/ba-zi-ji-dang-cheng-yi-jia-gong-si-lai-jing-ying-xing-dong-zhi-nan/" class="post-title gt-a-link">
+                    把自己当成一家公司来经营 —— 行动指南
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '94fca913faabe61337e0',
+    clientSecret: '9ee8a359f64b424f77e6fba28063b59788b92af1',
+    repo: 'fanguyun.github.io',
+    owner: 'fanguyun',
+    admin: ['fanguyun'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">⌨️ 格物、致知、诚意  🎉<br/>
+⌨️ 正心、修身、齐家  🎉</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Jonfan & Grider  🖥
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fanguyun.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

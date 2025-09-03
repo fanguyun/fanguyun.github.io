@@ -1,0 +1,395 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>把自己当成一家公司来经营 —— 行动指南 | Jonfan Blog</title>
+
+<link rel="shortcut icon" href="https://fanguyun.github.io/favicon.ico?v=1756882027206">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fanguyun.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DD6BSW9VD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-DD6BSW9VD');
+</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Jonfan Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1756882027206"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    把自己当成一家公司来经营 —— 行动指南
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2025-09-03 ·
+                    </time>
+                    
+                        <a href="https://fanguyun.github.io/tag/V3ahqQFmry/" class="post-tags">
+                            # 思维
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/tTk6dC0PBO-/" class="post-tags">
+                            # 一人公司
+                        </a>
+                    
+                        <a href="https://fanguyun.github.io/tag/MazpN76u_Pu/" class="post-tags">
+                            # 行动力
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="把自己当成一家公司来经营行动指南">把自己当成一家公司来经营——行动指南</h1>
+<h2 id="一-自我认知阶段明确我是谁与我有什么">一、自我认知阶段：明确“我是谁”与“我有什么”</h2>
+<h3 id="一我是谁行动">（一）“我是谁”行动</h3>
+<ol>
+<li><strong>个性探索</strong>：通过自我反思、记录日常行为和情绪反应，或者借助性格测试工具（如MBTI、大五人格测试等），深入了解自己的性格特点，比如是内向还是外向、是偏理性还是感性等。</li>
+<li><strong>兴趣爱好盘点</strong>：列出过去一年中，自己在业余时间主动去做且能从中获得愉悦感的事情，像阅读、绘画、运动、摄影等，明确兴趣所在。</li>
+<li><strong>擅长之事梳理</strong>：回顾过往经历，包括学习、工作、生活中的成功案例，找出那些自己能轻松完成且成果较好的事情，总结出擅长的领域，例如擅长文案写作、数据分析或者人际沟通等。</li>
+</ol>
+<h3 id="二我有什么行动">（二）“我有什么”行动</h3>
+<ol>
+<li><strong>知识整理</strong>：将自己所学的专业知识、通过阅读等积累的各类知识，按照学科、领域或者应用场景进行分类整理，形成知识体系框架，方便后续调用。</li>
+<li><strong>技能评估</strong>：对自己掌握的技能进行评估，区分专业技能（如编程、设计、外语等）和软技能（如团队协作、问题解决、时间管理等），并通过实际操作或技能测试确定技能水平。</li>
+<li><strong>经验复盘</strong>：对过往的项目经历、工作经历等进行复盘，提炼出关键的经验教训，比如在某个项目中是如何克服困难、达成目标的，将这些经验转化为可复用的能力。</li>
+<li><strong>资源与人脉梳理</strong>：列出自己拥有的物质资源（如书籍、设备等）、信息资源（如行业报告、优质学习平台等），以及人脉网络（包括家人、朋友、同事、行业前辈等），明确这些资源和人脉能在哪些方面为自己提供支持。</li>
+</ol>
+<h2 id="二-业务规划阶段聚焦核心业务各模块">二、业务规划阶段：聚焦“核心业务”各模块</h2>
+<h3 id="一关键业务行动">（一）关键业务行动</h3>
+<ol>
+<li><strong>能力匹配与目标设定</strong>：基于“我有什么”，分析自己的知识、技能、经验与市场需求或个人目标的匹配度，确定“我能做什么”；结合“我擅长做什么”，筛选出自己既擅长又有市场需求或符合个人发展的方向，明确“我要做什么”，并制定具体、可衡量、可实现、相关联、有时限（SMART）的目标。例如，若擅长写作且想往内容创作方向发展，可设定“3个月内成为某平台签约作者，每月产出4篇优质文章”的目标。</li>
+</ol>
+<h3 id="二客户群体行动">（二）客户群体行动</h3>
+<ol>
+<li><strong>市场调研与用户画像</strong>：通过线上调研（如问卷、行业论坛）、线下交流（如参加行业活动、社群讨论）等方式，了解目标领域的受众需求、痛点，绘制详细的用户画像，明确“我能帮谁”“对谁有用”。例如，若做职场技能培训，用户可能是刚入职场的新人，他们的痛点是缺乏工作方法和职场经验。</li>
+<li><strong>需求验证与付费意愿</strong>：针对目标客户群体，进行小规模的产品或服务测试，收集反馈，验证自己能提供的价值是否符合他们的需求，同时通过调研或与潜在客户沟通，了解他们的付费意愿和预算范围，确定“谁愿意买单”。</li>
+</ol>
+<h3 id="三价值服务行动">（三）价值服务行动</h3>
+<ol>
+<li><strong>服务/产品设计</strong>：根据客户群体的需求和痛点，结合自己的核心资源，设计具体的服务或产品。如果是服务，明确服务的流程、内容和交付标准；如果是产品，确定产品的功能、形态（如线上课程、实体书籍等）。例如，针对职场新人的需求，设计一套“职场新人成长训练营”的服务，包含课程学习、一对一指导、社群交流等内容。</li>
+<li><strong>价值传递优化</strong>：在服务或产品交付过程中，持续收集客户反馈，优化服务或产品，确保能切实为客户提供价值，回答好“怎样帮助他人”和“提供什么价值”。</li>
+</ol>
+<h3 id="四渠道通路行动">（四）渠道通路行动</h3>
+<ol>
+<li><strong>营销渠道选择与运营</strong>：根据目标客户群体的特点，选择合适的公域和私域渠道进行营销。公域渠道如抖音、知乎、小红书等，要根据平台特性制作符合风格的内容，定期更新，吸引流量；私域渠道如个人微信、社群等，要做好内容运营和用户互动，建立信任。</li>
+<li><strong>交付渠道搭建与优化</strong>：根据服务或产品的形式，搭建线上（如官网、小程序、第三方平台店铺）或线下（如工作室、合作场地）的交付渠道，并优化交付流程，确保客户能便捷、高效地获取服务或产品。</li>
+</ol>
+<h3 id="五客户关系行动">（五）客户关系行动</h3>
+<ol>
+<li><strong>联系建立与维护</strong>：通过参加行业活动、社群互动、主动沟通等方式与目标客户或合作伙伴建立联系。对于已建立联系的客户，根据服务类型，若为一次性服务，要做好服务过程中的体验和售后反馈；若为持续性服务，要定期与客户沟通，了解需求变化，提供持续的价值，增强客户粘性。</li>
+<li><strong>客户分层与精准服务</strong>：对客户进行分层，根据客户的消费能力、需求频次、价值贡献等，提供差异化的服务和沟通策略，提升客户满意度和忠诚度。</li>
+</ol>
+<h3 id="六重要合作行动">（六）重要合作行动</h3>
+<ol>
+<li><strong>合作对象筛选与沟通</strong>：识别能在资源、技能、渠道等方面为自己提供帮助的家人、朋友、同事、行业伙伴等，主动与他们沟通，阐述自己的目标和需求，寻求合作机会，比如联合开展项目、资源共享等。</li>
+<li><strong>合作关系维护</strong>：在合作过程中，明确双方的权利和义务，保持良好的沟通，及时解决合作中出现的问题，维护好合作关系，实现互利共赢。</li>
+</ol>
+<h3 id="七成本结构行动">（七）成本结构行动</h3>
+<ol>
+<li><strong>支出分类与记录</strong>：对自己在时间、精力、人脉、资金等方面的支出进行分类记录，建立个人的“成本台账”，清晰了解每一项支出的去向和用途。</li>
+<li><strong>成本优化与控制</strong>：定期分析成本结构，找出可优化的部分。例如，在时间支出上，通过时间管理工具和方法，提高时间利用效率；在资金支出上，制定预算，合理分配资金，避免不必要的开支。</li>
+</ol>
+<h3 id="八收入来源行动">（八）收入来源行动</h3>
+<ol>
+<li><strong>收入渠道拓展</strong>：基于自己的核心业务和价值服务，积极拓展收入渠道。除了常规的销售收入、服务费，还可以通过打造个人品牌获取影响力变现（如广告合作、品牌代言等），或者通过知识付费、版权收益等方式增加收入来源。</li>
+<li><strong>收入增长策略</strong>：针对不同的收入来源，制定增长策略。例如，对于服务费收入，可通过提升服务质量和专业度，提高服务定价；对于影响力变现，可通过持续输出优质内容，扩大个人品牌影响力，吸引更多合作机会。同时，关注行业动态和市场需求变化，及时调整收入策略，确保收入的持续增长。</li>
+</ol>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fanguyun.github.io/post/2025-web-quan-zhan-ji-zhu-zhan-qing-dan/" class="post-title gt-a-link">
+                    2025 Web 全栈技术栈清单
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '94fca913faabe61337e0',
+    clientSecret: '9ee8a359f64b424f77e6fba28063b59788b92af1',
+    repo: 'fanguyun.github.io',
+    owner: 'fanguyun',
+    admin: ['fanguyun'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">⌨️ 格物、致知、诚意  🎉<br/>
+⌨️ 正心、修身、齐家  🎉</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Jonfan & Grider  🖥
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fanguyun.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
